@@ -1,0 +1,2838 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	transition: all .2s ease-in-out;
+	font-family: "Poppins", sans-serif;
+}
+.container{
+	width: 100%;
+	scroll-behavior: smooth;
+	padding-top: 190px;
+	background: #111;
+	background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.534),
+	rgb(0, 0, 0)),url(images/bg-1.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	object-fit: cover;
+	min-height: 90vh;
+}
+.details{
+	width: 97%;
+	text-align: center;
+	justify-content: center;
+	margin: auto;
+	padding: 10px;
+	max-width: 600;
+	padding-left: 8px;
+	padding-right: 8px;
+	flex-grow: 1;
+}
+.details h1{
+	font-size: 40px;
+	color: white;
+	letter-spacing: 2px;
+	font-weight: 700;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.details p{
+	font-size: 13px;
+	color: white;
+	letter-spacing: 1px;
+	font-weight: 400;
+	padding-bottom: 1rem;
+}
+.details span{
+	font-size: 15px;
+	color: white;
+	letter-spacing: 1px;
+	font-weight: 600;
+	color: red;
+}
+.details button{
+	width: 10rem;
+	padding: 7px 10px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: none;
+	background: red;
+	outline: none;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.details button a{
+	font-size: 15px;
+	letter-spacing: 1px;
+	font-weight: 500;
+	color: white;
+	text-decoration: none;
+}
+.details button:hover{
+	background: transparent;
+	border: 1px solid white;
+}
+.details button:active{
+	transform: translateY(1.1rem);
+}
+/*//////////////////////*/
+#gallery{
+	width: 100%;
+	padding: 20px;
+	background: #000;
+	scroll-behavior: smooth;
+	padding-top: 2rem;
+}
+.gallery-slider{
+	width: 97%;
+	margin: auto;
+	padding-top: 30px;
+	flex-grow: 1;
+}
+.slider{
+	height: 350px;
+	background: #111;
+	margin: auto;
+	position: relative;
+	width: 90%;
+	display: grid;
+	padding: 15px;
+	place-items: center;
+	overflow: hidden;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-bottom: 50px;
+}
+.slide-track{
+	display: flex;
+	width: calc(250px * 18);
+	animation: scroll 40s linear infinite;
+}
+.slide-track:hover{
+	animation-play-state: paused;
+}
+@keyframes scroll{
+	0%{
+		transform: translateX(0);
+	}
+	100%{
+		transform: translateX(calc(-250px * 9));
+	}
+}
+.slide{
+	height: 200px;
+	width: 250px;
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	perspective: 100px;
+}
+img{
+	width: 100%;
+	border-radius: 5px;
+}
+img:hover{
+	transform: translateZ(10px);
+	transition: all .3s ease;
+}
+.slider::before,
+.slider::after{
+	background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%,
+	rgba(255,255,255,0) 100%);
+	content: '';
+	height: 100%;
+	position: absolute;
+	z-index: 2;	
+}
+.slider::before{
+	left: 0;
+	top: 0;
+}
+.slider::after{
+	right: 0;
+	top: 0;
+	transform: rotateZ(100deg);
+}
+/*/////////////////////////////*/
+#capture{
+	width: 100%;
+	scroll-behavior: smooth;
+}
+#capture h2{
+	text-align: center;
+	font-size: 25px;
+	letter-spacing: 1px;
+	color: black;
+	font-weight: 650;
+	padding-top: 20px;
+	margin-bottom:3rem;
+}
+.capture-content{
+	display: flex;
+	gap: 35px;
+	scroll-behavior: smooth;
+	width: 95%;
+	margin: auto;
+	flex-grow: 1;
+	padding: 20px;
+	background: #ddd;
+}
+.card{
+	width: 500px;
+	aspect-ratio: 1 / 1.2;
+	border-radius: 16px;
+	overflow: hidden;
+	position: relative;
+	background: green;
+	cursor: pointer;
+}
+.card > img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.3s cubic-bezier(0.55,0.055,0.675,0.19);
+}
+.card > .content{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+	background: #100c20;
+	padding: 1.4rem;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transform: translate(0, 100%);
+	transition:  opacity 0.5s ease, transform 0.3s ease;
+}
+.card .content h1{
+	color: white;
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+.card .content p{
+	color: white;
+	font-size: 15px;
+	color: white;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+.card:hover img{
+	scale: 1.1;
+}
+.card:hover > .content{
+	opacity: 1;
+	cursor: pointer;
+	transform: translate(0, 0);
+}
+.container:hover > .card:not(:hover){
+	filter: blur(5px);
+}
+/*/////////////////////*/
+#price{
+	width: 100%;
+	padding-top: 40px;
+	scroll-behavior: smooth;
+	background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
+	rgb(0, 0, 0)),url(images/bg-2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	object-fit: cover;
+}
+#price h3{
+	text-align: center;
+	font-size: 23px;
+	letter-spacing: 2px;
+	font-weight: 630;
+	color: white;
+	margin-bottom: 2rem;
+}
+.pricing{
+	width: 100%;
+	margin: auto;
+	background: transparent;
+	flex-grow: 1;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.price-card{
+	width: 34%;
+	padding: 10px;
+	border-radius: 5px;
+	background: transparent;
+	border:.1px solid grey;
+	margin-bottom: 2rem;
+	box-shadow: 0 0 1px 1px white;
+}
+#mid-card{
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	box-shadow: 0 0 5px 3px white;
+	z-index: 5;
+}
+.pop{
+	color: yellow;
+	font-size: 13px;
+	letter-spacing: 2px;
+	font-weight: 410;
+	border: 1px solid grey;
+	padding: 7px 10px;
+	border-radius: 20px;
+	text-align: center;
+}
+.price-card h1{
+	font-size: 20px;
+	letter-spacing: 1px;
+	color: white;
+	font-weight: 500;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	text-align: center;
+	padding-left: 10px;
+}
+.price-card h2{
+	font-size: 25px;
+	letter-spacing: 1px;
+	color: white;
+	font-weight: 500;;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+.price-card bold{
+	color: yellow;
+	font-weight: 500;
+	letter-spacing: 1px;
+	padding-left: 10px;
+}
+.price-card h5{
+	font-size: 15px;
+	letter-spacing: 1px;
+	color: white;
+	font-weight: 500;;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+.price-card p{
+	font-size: 13px;
+	letter-spacing: 1px;
+	padding-left: 10px;
+	color: white;
+	font-weight: 400;;
+	padding-bottom: 20px;
+}
+.price-card ul li{
+	list-style: none;
+	font-size: 13px;
+	padding-left: 10px;
+	letter-spacing: 1px;
+	color: white;
+	font-weight: 350;
+	padding-bottom: 5px;
+}
+.price-card button{
+	width: 97%;
+	margin-top: 1.2rem;
+	border: none;
+	margin-left: 8px;
+	box-shadow: 0 3px white;
+	background: transparent;
+	outline: none;
+	border: 1px solid white;
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 8px 10px;
+	margin-bottom: 2rem;
+}
+.price-card button a{
+	text-decoration: none;
+	font-size: 16px;
+	color: white;
+	letter-spacing: 2px;
+	font-weight: 600;
+}
+.price-card button:active{
+	transform: translateY(1.1rem);
+	cursor: pointer;
+}
+/*////////////////////////////*/
+.services{
+	width: 100%;
+	scroll-behavior: smooth;
+	padding-top: 30px;
+	background: #eee;
+	border-top: 1px solid grey;
+}
+.services h3{
+	text-align: center;
+	font-weight: 620;
+	letter-spacing: 1px;
+	font-size: 25px;
+	margin-bottom: 2rem;
+	color: black;
+}
+.accordion {
+  background-color: darkred;
+	color: #fff;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: left;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid white;
+	transition: 0.4s ease;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: green;
+}
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.panel {
+  padding: 25px;
+  background-color: #000;
+  color: white;
+  font-size:15px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 12px;
+  color: white;
+  font-weight: 300;
+  float: right;
+  margin-left: 5px;
+}
+.active:af {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+/*////////////////////////*/
+#contact{
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: #111;
+	background-image:linear-gradient(to left,rgba(0, 0, 0, 0.534),
+	rgb(0, 0, 0)),url(images/bg-3.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	object-fit: cover;
+	scroll-behavior: smooth;
+}
+.contact-form{
+	width: 97%;
+	margin: auto;
+	padding: 10x;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+form{
+	width: 58%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid white;
+	background: transparent;
+}
+form .footer-names{
+	display: flex;
+	margin-top: 10px;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+form .first{
+	margin-right: 10px;
+}
+form input{
+	width: 18rem;
+	padding: 7px 10px;
+	outline: none;
+	color: white;
+	font-size: 15px;
+	letter-spacing: 1px;
+	font-weight: 400;
+	border: 1px solid white;
+	background-color: transparent;
+}
+form textarea{
+	width: 90%;
+	margin: auto;
+	display: block;
+	background: transparent;
+	border: 1px solid white;
+	padding: 8px 10px;
+	color: white;
+	font-size: 15px;
+	letter-spacing: 1px;
+	font-weight: 400;
+	margin-bottom: 1.5rem;
+}
+form .send{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.send strong{
+	font-weight: 400;
+	letter-spacing: 1px;
+	color: whitesmoke;
+	font-size: 13px;
+}
+.sub-btn{
+	width: 8rem;
+	padding: 7px 10px;
+	outline: none;
+	border: none;
+	background: royalblue;
+	color: white;
+	font-weight: 600;
+	letter-spacing: 1px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.info{
+	width: 40%;
+	padding: 10px;
+	text-align: left;
+	display: block;
+}
+.info h2{
+	font-size: 25px;
+	letter-spacing: 1px;
+	color: white;
+	font-weight: 500;
+	text-transform: capitalize;
+	padding-bottom: 10px;
+}
+.info p{
+	font-size: 13px;
+	letter-spacing: 1px;
+	color: white;
+	font-weight: 400;
+	padding-bottom: 20px;
+}
+.socials{
+	list-style: none;
+	text-decoration: none;
+}
+.socials a i{
+	display: inline-flex;
+	font-size: 25px;
+	width: 20px;
+	height: 20px;
+	color: white;
+	list-style: none;
+	text-decoration: none;
+	padding: 5px 30px;
+}
+.socials a i:hover{
+	color: yellow;
+	transform: scale(30px);
+}
+.info h4{
+	padding-top: 20px;
+	color: white;
+	font-weight: 500;
+	letter-spacing: 2px;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.email{
+	color: #ddd;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-decoration: none;
+}
+/*////////////////////////*/
+footer{
+	width: 100%;
+	scroll-behavior: smooth;
+	text-align: center;
+	padding: 30px;
+	color: white;
+	font-weight: 500;
+	letter-spacing: 1px;
+	background: #111;
+}
+.gotopbr i{
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	scroll-behavior: smooth;
+	background: darkred;
+	bottom: 40px;
+	right: 30px;
+	border-radius: 5px;
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	font-size: 22px;
+}
+.gotopbr i:hover{
+	background: red;
+}
+/*///responsive view//////*/
+/*///////////////////////*/
+@media only screen and (max-width:904px){
+		.capture-content{
+				display: flex;
+				gap: 25px;
+				scroll-behavior: smooth;
+				width: 95%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 20px;
+				background: #ddd;
+			}
+			.card{
+				width: 600px;
+				aspect-ratio: 1 / 1.2;
+				border-radius: 16px;
+				overflow: hidden;
+				position: relative;
+				background: green;
+				cursor: pointer;
+			}
+
+		.pricing{
+				width: 100%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+		.price-card{
+				width: 50%;
+				padding: 10px;
+				border-radius: 5px;
+				background: transparent;
+				border:.1px solid grey;
+				margin-bottom: 2.5rem;
+				box-shadow: 0 0 1px 1px white;
+			}
+			.contact-form{
+				width: 97%;
+				margin: auto;
+				padding: 10x;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			form{
+				width: 60%;
+				padding: 10px;
+				border-radius: 5px;
+				border: 1px solid white;
+				background: transparent;
+			}
+			form .first{
+				margin-right: 10px;
+			}
+			form input{
+				width: 16rem;
+				padding: 7px 10px;
+				outline: none;
+				color: white;
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				border: 1px solid white;
+				background-color: transparent;
+			}
+			form textarea{
+				width: 90%;
+				margin: auto;
+				display: block;
+				background: transparent;
+				border: 1px solid white;
+				padding: 7px 10px;
+				color: white;
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				margin-bottom: 1.5rem;
+			}
+			.send strong{
+				font-weight: 400;
+				letter-spacing: 1px;
+				color: whitesmoke;
+				font-size: 11px;
+			}
+			.sub-btn{
+				width: 7rem;
+				padding: 7px 10px;
+				outline: none;
+				border: none;
+				background: royalblue;
+				color: white;
+				font-weight: 600;
+				letter-spacing: 1px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.info{
+				width: 35%;
+				padding: 10px;
+				text-align: left;
+				display: block;
+			}
+			.info h2{
+				font-size: 20px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 500;
+				text-transform: capitalize;
+				padding-bottom: 10px;
+			}
+			.info p{
+				font-size: 11px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 400;
+				padding-bottom: 20px;
+			}
+			.socials a i{
+				display: inline-flex;
+				font-size: 20px;
+				width: 15px;
+				height: 15px;
+				color: white;
+				list-style: none;
+				text-decoration: none;
+				padding: 5px 25px;
+			}
+			.info h4{
+				padding-top: 20px;
+				color: white;
+				font-weight: 500;
+				letter-spacing: 1px;
+				font-size: 17px;
+				margin-bottom: 10px;
+			}
+			.email{
+				color: #ddd;
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				text-decoration: none;
+			}
+			.gotopbr i{
+				position: fixed;
+				width: 50px;
+				height: 50px;
+				scroll-behavior: smooth;
+				background: darkred;
+				bottom: 40px;
+				right: 10px;
+				border-radius: 5px;
+				text-decoration: none;
+				text-align: center;
+				line-height: 50px;
+				color: white;
+				font-size: 20px;
+			}
+}
+@media only screen and (max-width:768px){
+		html{
+			font-size: calc(40px, 80vw, 105px);
+		}
+		.details h1{
+				font-size: 35px;
+				letter-spacing: 1px;
+				font-weight: 650;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.details p{
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				padding-bottom: 1rem;
+			}
+			.details span{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.details button{
+				width: 9rem;
+				padding: 7px 10px;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			.details button a{
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+			#capture h2{
+				text-align: center;
+				font-size: 23px;
+				letter-spacing: 1px;
+				font-weight: 620;
+				padding-top: 20px;
+				margin-bottom:2rem;
+			}
+		.capture-content{
+				display: flex;
+				gap: 25px;
+				scroll-behavior: smooth;
+				width: 95%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 20px;
+				background: #ddd;
+			}
+			.card{
+				width: 600px;
+				aspect-ratio: 1 / 1.2;
+				border-radius: 16px;
+				overflow: hidden;
+				position: relative;
+				background: green;
+				cursor: pointer;
+			}
+
+		.pricing{
+				width: 100%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+		.price-card{
+				width: 50%;
+				padding: 10px;
+				border-radius: 5px;
+				background: transparent;
+				border:.1px solid grey;
+				margin-bottom: 2.5rem;
+				box-shadow: 0 0 1px 1px white;
+			}
+			.services{
+				width: 100%;
+				padding-top: 20px;
+			}
+			.services h3{
+				text-align: center;
+				font-weight: 620;
+				letter-spacing: 1px;
+				font-size: 20px;
+				margin-bottom: 2rem;
+			}
+			.accordion {
+				padding: 16px;
+				width: 100%;
+				font-size: 14px;
+				font-weight: 400;
+			}
+			.panel {
+			  padding: 23px;
+			  font-size:13px;
+			  letter-spacing: 1px;
+			  font-weight: 400;
+			  max-height: 0;
+			}
+			.contact-form{
+				width: 97%;
+				margin: auto;
+				padding: 10x;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-direction: column;
+			}
+			form{
+				width: 80%;
+				margin-bottom: 2rem;
+				padding: 10px;
+				border-radius: 5px;
+				border: 1px solid white;
+				background: transparent;
+			}
+			form .first{
+				margin-right: 10px;
+			}
+			form input{
+				width: 16rem;
+				padding: 7px 10px;
+				outline: none;
+				color: white;
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				border: 1px solid white;
+				background-color: transparent;
+			}
+			form textarea{
+				width: 90%;
+				margin: auto;
+				display: block;
+				background: transparent;
+				border: 1px solid white;
+				padding: 7px 10px;
+				color: white;
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				margin-bottom: 1.5rem;
+			}
+			.send strong{
+				font-weight: 400;
+				letter-spacing: 1px;
+				color: whitesmoke;
+				font-size: 11px;
+			}
+			.sub-btn{
+				width: 7rem;
+				padding: 7px 10px;
+				outline: none;
+				border: none;
+				background: royalblue;
+				color: white;
+				font-weight: 600;
+				letter-spacing: 1px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.info{
+				width: 60%;
+				padding: 10px;
+				text-align: center;
+				display: block;
+			}
+			.info h2{
+				font-size: 20px;
+				letter-spacing: 1px;
+				font-weight: 500;
+				padding-bottom: 10px;
+			}
+			.info p{
+				font-size: 10px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 400;
+				padding-bottom: 20px;
+			}
+			.socials a i{
+				display: inline-flex;
+				font-size: 20px;
+				width: 15px;
+				height: 15px;
+				padding: 5px 25px;
+			}
+			.info h4{
+				padding-top: 20px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				font-size: 17px;
+				margin-bottom: 10px;
+			}
+			.email{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.gotopbr i{
+				position: fixed;
+				width: 50px;
+				height: 50px;
+				bottom: 40px;
+				right: 10px;
+				line-height: 50px;
+				font-size: 20px;
+			}
+			footer p{
+				font-size: 13px;
+				letter-spacing: 1px;
+			}		
+}
+/*@media only screen and (max-width:712px){
+		.container{
+				width: 100%;
+				padding-top: 100px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 60vh;
+			}
+}*/
+@media only screen and (max-width:638px){
+		.container{
+				width: 100%;
+				padding-top: 100px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 85vh;
+			}
+
+		.details h1{
+				font-size: 35px;
+				letter-spacing: 1px;
+				font-weight: 650;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.details p{
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				padding-bottom: 1rem;
+			}
+			.details span{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.details button{
+				width: 9rem;
+				padding: 7px 10px;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			.details button a{
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+			/*////////////////////////*/
+			#gallery{
+					width: 100%;
+					padding: 10px;
+					padding-top: 1.5rem;
+				}
+				.gallery-slider{
+					padding-top: 20px;
+				}
+			.slider{
+				height: 250px;
+				width: 90%;
+				display: grid;
+				padding: 15px;
+				margin-bottom: 50px;
+			}
+			#capture h2{
+				font-size: 20px;
+				letter-spacing: 0;
+				font-weight: 620;
+				padding-top: 20px;
+				margin-bottom:2rem;
+			}
+		.capture-content{
+				display: flex;
+				gap: 10px;
+				width: 100%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 13px;
+			}
+			.card{
+				width: 670px;
+				aspect-ratio: 1 / 1.1;
+				border-radius: 15px;
+			}
+			.card .content h1{
+				color: white;
+				font-size: 13px;
+				letter-spacing: 0;
+				font-weight: 550;
+				padding-bottom: 7px;
+			}
+			.card .content p{
+				color: white;
+				font-size: 11px;
+				color: white;
+				font-weight: 400;
+				letter-spacing: 0;
+			}
+			#price h3{
+				text-align: center;
+				font-size: 20px;
+				letter-spacing: 1px;
+				font-weight: 600;
+				margin-bottom: 2rem;
+			}
+		.pricing{
+				width: 100%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+		.price-card{
+				width: 60%;
+				padding: 10px;
+				border-radius: 5px;
+				background: transparent;
+				border:.1px solid grey;
+				margin-bottom: 2.5rem;
+				box-shadow: 0 0 1px 1px white;
+			}
+			.pop{
+				color: yellow;
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.price-card h1{
+				font-size: 18px;
+				letter-spacing: 0;
+				font-weight: 500;
+				padding-top: 10px;
+				padding-bottom: 15px;
+				padding-left: 10px;
+			}
+			.price-card h2{
+				font-size: 20px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 500;;
+				padding-bottom: 5px;
+				padding-left: 10px;
+			}
+			.price-card bold{
+				font-weight: 450;
+			}
+			.price-card h5{
+				font-size: 13px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 450;;
+				padding-bottom: 10px;
+				padding-left: 10px;
+			}
+			.price-card p{
+				font-size: 12px;
+				letter-spacing: 1px;
+				padding-left: 10px;
+				color: white;
+				font-weight: 400;;
+				padding-bottom: 20px;
+			}
+			.price-card ul li{
+				list-style: none;
+				font-size: 13px;
+				padding-left: 10px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 350;
+				padding-bottom: 5px;
+			}
+			.services{
+				width: 100%;
+				padding-top: 20px;
+			}
+			.services h3{
+				text-align: center;
+				font-weight: 620;
+				letter-spacing: 1px;
+				font-size: 20px;
+				margin-bottom: 2rem;
+			}
+			.accordion {
+				padding: 16px;
+				width: 100%;
+				font-size: 12px;
+				font-weight: 400;
+			}
+			.panel {
+			  padding: 23px;
+			  font-size:12px;
+			  letter-spacing: 1px;
+			  font-weight: 400;
+			  max-height: 0;
+			}
+			#contact{
+				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
+				rgb(0, 0, 0)),url(images/bg-3.jpg);
+			}
+			.contact-form{
+				width: 97%;
+				margin: auto;
+				padding: 10x;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-direction: column;
+			}
+			form{
+				width: 85%;
+				margin-bottom: 2rem;
+				padding: 10px;
+				border-radius: 5px;
+				border: 1px solid white;
+				background: transparent;
+			}
+			form .footer-names{
+				display: block;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				width: 90%;
+				margin: auto;
+				justify-content: center;
+				align-items: center;
+			}
+			form .first{
+				margin-right: 0;
+			}
+			form input{
+				width: 100%;
+				margin-bottom: 1rem;
+				padding: 9px 10px;
+				outline: none;
+				color: white;
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				border: 1px solid white;
+				background-color: transparent;
+			}
+			form textarea{
+				width: 90%;
+				margin: auto;
+				display: block;
+				background: transparent;
+				border: 1px solid white;
+				padding: 7px 10px;
+				color: white;
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				margin-bottom: 1.5rem;
+			}
+			.send strong{
+				font-weight: 400;
+				letter-spacing: 1px;
+				color: whitesmoke;
+				font-size: 11px;
+			}
+			.sub-btn{
+				width: 7rem;
+				padding: 7px 10px;
+				outline: none;
+				border: none;
+				background: royalblue;
+				color: white;
+				font-weight: 600;
+				letter-spacing: 1px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.info{
+				width: 60%;
+				padding: 10px;
+				text-align: center;
+				display: block;
+			}
+			.info h2{
+				font-size: 20px;
+				letter-spacing: 1px;
+				font-weight: 500;
+				padding-bottom: 10px;
+			}
+			.info p{
+				font-size: 10px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 400;
+				padding-bottom: 20px;
+			}
+			.socials a i{
+				display: inline-flex;
+				font-size: 20px;
+				width: 15px;
+				height: 15px;
+				padding: 5px 25px;
+			}
+			.info h4{
+				padding-top: 20px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				font-size: 17px;
+				margin-bottom: 10px;
+			}
+			.email{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.gotopbr i{
+				position: fixed;
+				width: 40px;
+				height: 40px;
+				bottom: 40px;
+				right: 10px;
+				line-height: 40px;
+				font-size: 20px;
+			}
+			footer p{
+				font-size: 12px;
+				letter-spacing: 1px;
+			}		
+}
+@media only screen and (max-width:530px){
+		.container{
+				width: 100%;
+				padding-top: 100px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 85vh;
+			}
+		.details h1{
+				font-size: 30px;
+				letter-spacing: 1.5px;
+				font-weight: 630;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.details p{
+				font-size: 10px;
+				width: 70%;
+				margin: auto;
+				text-align: center;
+				letter-spacing: 1px;
+				font-weight: 400;
+				padding-bottom: 1rem;
+			}
+			.details span{
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.details button{
+				width: 8rem;
+				padding: 6px 9px;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			.details button a{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+			/*////////////////////////*/
+			#gallery{
+					width: 100%;
+					padding: 10px;
+					padding-top: 1.5rem;
+				}
+				.gallery-slider{
+					padding-top: 20px;
+				}
+			.slider{
+				height: 250px;
+				width: 90%;
+				display: grid;
+				padding: 10px;
+				margin-bottom: 50px;
+			}
+			#capture h2{
+				font-size: 15px;
+				letter-spacing: 0;
+				font-weight: 620;
+				padding-top: 20px;
+				margin-bottom:1rem;
+			}
+		.capture-content{
+				display: flex;
+				gap: 10px;
+				width: 97%;
+				margin: auto;
+				flex-direction: column;
+				justify-content: center;
+				flex-grow: 1;
+				padding: 10px;
+			}
+			.card{
+				width: 350px;
+				margin: auto;
+				margin-bottom: 1rem;
+				aspect-ratio: 1 / 1.1;
+				border-radius: 15px;
+			}
+			.card > img{
+				width: 100%;
+				height: 100%;
+			}
+			.card > .content{
+				height: 40%;
+				background: #100c20;
+				padding: 1.2rem;
+			}
+			.card .content h1{
+				color: white;
+				font-size: 16px;
+				letter-spacing: 0;
+				font-weight: 600;
+				padding-bottom: 7px;
+			}
+			.card .content p{
+				color: white;
+				font-size: 12px;
+				color: white;
+				font-weight: 420;
+				letter-spacing: 0;
+			}
+			#price h3{
+				text-align: center;
+				font-size: 18px;
+				letter-spacing: 1px;
+				font-weight: 550;
+				margin-bottom: 2rem;
+			}
+		.pricing{
+				width: 100%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+		.price-card{
+				width: 70%;
+				padding: 10px;
+				border-radius: 5px;
+				background: transparent;
+				border:.1px solid grey;
+				margin-bottom: 2.5rem;
+				box-shadow: 0 0 1px 1px white;
+			}
+			.pop{
+				color: yellow;
+				font-size: 10px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.price-card h1{
+				font-size: 15px;
+				letter-spacing: 0;
+				font-weight: 500;
+				padding-top: 10px;
+				padding-bottom: 13px;
+				padding-left: 10px;
+			}
+			.price-card h2{
+				font-size: 18px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 500;;
+				padding-bottom: 5px;
+				padding-left: 10px;
+			}
+			.price-card bold{
+				font-weight: 430;
+			}
+			.price-card h5{
+				font-size: 12px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 450;;
+				padding-bottom: 10px;
+				padding-left: 10px;
+			}
+			.price-card p{
+				font-size: 10px;
+				letter-spacing: 1px;
+				padding-left: 10px;
+				color: white;
+				font-weight: 400;;
+				padding-bottom: 20px;
+			}
+			.price-card ul li{
+				list-style: none;
+				font-size: 11px;
+				padding-left: 10px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 350;
+				padding-bottom: 5px;
+			}
+			.price-card button{
+				width: 97%;
+				margin:auto;
+				margin-top: 1.5rem;
+				padding: 8px 10px;
+				box-shadow: 0 1px white;
+				margin-bottom: 15px;
+			}
+			.price-card button a{
+				font-size: 14px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.services{
+				width: 100%;
+				padding-top: 10px;
+			}
+			.services h3{
+				text-align: center;
+				font-weight: 620;
+				letter-spacing: 1px;
+				font-size: 20px;
+				margin-bottom: 1rem;
+			}
+			.accordion {
+				padding: 16px;
+				width: 100%;
+				font-size: 12px;
+				font-weight: 400;
+			}
+			.panel {
+			  padding: 23px;
+			  font-size:10px;
+			  letter-spacing: 1px;
+			  font-weight: 400;
+			  max-height: 0;
+			}
+			#contact{
+				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
+				rgb(0, 0, 0)),url(images/bg-3.jpg);
+			}
+			.contact-form{
+				width: 97%;
+				margin: auto;
+				padding: 10x;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-direction: column;
+			}
+			form{
+				width: 80%;
+				margin-bottom: 2rem;
+				padding: 10px;
+				border-radius: 5px;
+				border: 1px solid white;
+				background: transparent;
+			}
+			form .footer-names{
+				display: block;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				width: 90%;
+				margin: auto;
+				justify-content: center;
+				align-items: center;
+			}
+			form .first{
+				margin-right: 0;
+			}
+			form input{
+				width: 100%;
+				margin-bottom: 1rem;
+				padding: 9px 10px;
+				outline: none;
+				color: white;
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				border: 1px solid white;
+				background-color: transparent;
+			}
+			form textarea{
+				width: 90%;
+				margin: auto;
+				display: block;
+				background: transparent;
+				border: 1px solid white;
+				padding: 7px 10px;
+				color: white;
+				font-size: 13px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				margin-bottom: 1.5rem;
+			}
+			form .send{
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 10px;
+			}
+			.send strong{
+				font-weight: 400;
+				letter-spacing: 1px;
+				color: whitesmoke;
+				padding-bottom: 15px;
+				font-size: 11px;
+			}
+			.sub-btn{
+				width: 15rem;
+				padding: 7px 10px;
+				outline: none;
+				border: none;
+				background: royalblue;
+				color: white;
+				font-weight: 600;
+				letter-spacing: 1px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.info{
+				width: 60%;
+				padding: 10px;
+				text-align: center;
+				display: block;
+			}
+			.info h2{
+				font-size: 20px;
+				letter-spacing: 1px;
+				font-weight: 500;
+				padding-bottom: 10px;
+			}
+			.info p{
+				font-size: 10px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 400;
+				padding-bottom: 20px;
+			}
+			.socials a i{
+				display: inline-flex;
+				font-size: 20px;
+				width: 15px;
+				height: 15px;
+				padding: 5px 25px;
+			}
+			.info h4{
+				padding-top: 20px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				font-size: 17px;
+				margin-bottom: 10px;
+			}
+			.email{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.gotopbr i{
+				position: fixed;
+				width: 40px;
+				height: 40px;
+				bottom: 40px;
+				right: 10px;
+				line-height: 40px;
+				font-size: 20px;
+			}
+			footer p{
+				font-size: 12px;
+				letter-spacing: 1px;
+			}		
+}
+@media only screen and (max-width:425px){
+		.container{
+				width: 100%;
+				padding-top: 100px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 80vh;
+			}
+		.details h1{
+				font-size: 27px;
+				letter-spacing: 1.5px;
+				font-weight: 630;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.details p{
+				font-size: 10px;
+				width: 70%;
+				margin: auto;
+				text-align: center;
+				letter-spacing: 1px;
+				font-weight: 400;
+				padding-bottom: 1rem;
+			}
+			.details span{
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.details button{
+				width: 8rem;
+				padding: 6px 9px;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			.details button a{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+			/*////////////////////////*/
+			#gallery{
+					width: 100%;
+					padding: 10px;
+					padding-top: 1.5rem;
+				}
+				.gallery-slider{
+					padding-top: 20px;
+				}
+			.slider{
+				height: 230px;
+				width: 90%;
+				display: grid;
+				padding: 10px;
+				margin-bottom: 40px;
+			}
+			#capture h2{
+				font-size: 13px;
+				letter-spacing: 0;
+				font-weight: 620;
+				padding-top: 20px;
+				margin-bottom:1rem;
+			}
+		.capture-content{
+				display: flex;
+				gap: 10px;
+				width: 97%;
+				margin: auto;
+				flex-direction: column;
+				justify-content: center;
+				flex-grow: 1;
+				padding: 10px;
+			}
+			.card{
+				width: 330px;
+				margin: auto;
+				margin-bottom: 1rem;
+				aspect-ratio: 1 / 1.1;
+				border-radius: 15px;
+			}
+			.card > img{
+				width: 100%;
+				height: 100%;
+			}
+			.card > .content{
+				height: 40%;
+				background: #100c20;
+				padding: 1.2rem;
+			}
+			.card .content h1{
+				color: white;
+				font-size: 16px;
+				letter-spacing: 0;
+				font-weight: 600;
+				padding-bottom: 7px;
+			}
+			.card .content p{
+				color: white;
+				font-size: 12px;
+				color: white;
+				font-weight: 420;
+				letter-spacing: 0;
+			}
+			#price h3{
+				text-align: center;
+				font-size: 18px;
+				letter-spacing: 1px;
+				font-weight: 550;
+				margin-bottom: 2rem;
+			}
+			#mid-card{
+				border-left: 1px solid orange;
+				border-right: 1px solid red;
+				box-shadow: 0 0 2px 3px orangered;
+				z-index: 5;
+			}
+		.pricing{
+				width: 100%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+		.price-card{
+				width: 70%;
+				padding: 10px;
+				border-radius: 5px;
+				background: transparent;
+				border:.1px solid grey;
+				margin-bottom: 2.5rem;
+				box-shadow: 0 0 1px 1px white;
+			}
+			.pop{
+				color: yellow;
+				font-size: 10px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.price-card h1{
+				font-size: 15px;
+				letter-spacing: 0;
+				font-weight: 500;
+				padding-top: 10px;
+				padding-bottom: 13px;
+				padding-left: 0;
+			}
+			.price-card h2{
+				font-size: 18px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 500;;
+				padding-bottom: 5px;
+				padding-left: 0;
+			}
+			.price-card bold{
+				font-weight: 430;
+			}
+			.price-card h5{
+				font-size: 12px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 450;;
+				padding-bottom: 10px;
+				padding-left: 0;
+			}
+			.price-card p{
+				font-size: 10px;
+				letter-spacing: 1px;
+				padding-left: 0;
+				color: white;
+				font-weight: 400;;
+				padding-bottom: 20px;
+			}
+			.price-card ul li{
+				list-style: none;
+				font-size: 11px;
+				padding-left: 0;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 350;
+				padding-bottom: 5px;
+			}
+			.price-card button{
+				width: 97%;
+				margin:auto;
+				margin-top: 1.5rem;
+				padding: 8px 10px;
+				box-shadow: 0 1px white;
+				margin-bottom: 15px;
+			}
+			.price-card button a{
+				font-size: 14px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.services{
+				width: 100%;
+				padding-top: 10px;
+			}
+			.services h3{
+				text-align: center;
+				font-weight: 620;
+				letter-spacing: 0;
+				font-size:15px;
+				margin-bottom: 10px;
+			}
+			.accordion {
+				padding: 15px;
+				width: 100%;
+				font-size: 11px;
+				font-weight: 400;
+			}
+			.panel {
+			  padding: 20px;
+			  font-size:10px;
+			  letter-spacing: 0;
+			  font-weight: 400;
+			  max-height: 0;
+			}
+			#contact{
+				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
+				rgb(0, 0, 0)),url(images/bg-3.jpg);
+			}
+			.contact-form{
+				width: 97%;
+				margin: auto;
+				padding: 10x;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-direction: column;
+			}
+			form{
+				width: 83%;
+				margin-bottom: 2rem;
+				padding: 10px;
+				border-radius: 5px;
+				border: 1px solid white;
+				background: transparent;
+			}
+			form .footer-names{
+				display: block;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				width: 90%;
+				margin: auto;
+				justify-content: center;
+				align-items: center;
+			}
+			form .first{
+				margin-right: 0;
+			}
+			form input{
+				width: 100%;
+				margin-bottom: 1rem;
+				padding: 9px 10px;
+				outline: none;
+				color: white;
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				border: 1px solid white;
+				background-color: transparent;
+			}
+			form textarea{
+				width: 90%;
+				margin: auto;
+				display: block;
+				background: transparent;
+				border: 1px solid white;
+				padding: 7px 10px;
+				color: white;
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				margin-bottom: 1.5rem;
+			}
+			form .send{
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 10px;
+			}
+			.send strong{
+				font-weight: 400;
+				letter-spacing: 0;
+				color: whitesmoke;
+				padding-bottom: 15px;
+				font-size: 10px;
+				text-align: center;
+			}
+			.sub-btn{
+				width: 15rem;
+				padding: 7px 10px;
+				outline: none;
+				border: none;
+				background: royalblue;
+				color: white;
+				font-weight: 600;
+				letter-spacing: 1px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.info{
+				width: 70%;
+				padding: 10px;
+				text-align: center;
+				display: block;
+			}
+			.info h2{
+				font-size: 18px;
+				letter-spacing: 1px;
+				font-weight: 500;
+				padding-bottom: 10px;
+			}
+			.info p{
+				font-size: 10px;
+				letter-spacing: 0;
+				color: white;
+				font-weight: 400;
+				padding-bottom: 20px;
+			}
+			.socials a i{
+				display: inline-flex;
+				font-size: 20px;
+				width: 13px;
+				height: 13px;
+				padding: 5px 20px;
+			}
+			.info h4{
+				padding-top: 20px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				font-size: 15px;
+				margin-bottom: 10px;
+			}
+			.email{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.gotopbr i{
+				position: fixed;
+				width: 40px;
+				height: 40px;
+				bottom: 40px;
+				right: 7px;
+				line-height: 40px;
+				font-size: 20px;
+			}
+			footer p{
+				font-size: 11px;
+				letter-spacing: 1px;
+			}		
+}
+@media only screen and (max-width:425px){
+		.container{
+				width: 100%;
+				padding-top: 80px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 75vh;
+			}
+		.details h1{
+				font-size: 25px;
+				letter-spacing: 1.3px;
+				font-weight: 630;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.details p{
+				font-size: 10px;
+				width: 75%;
+				margin: auto;
+				padding-top: 10px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				padding-bottom: 1rem;
+			}
+			.details span{
+				font-size: 10px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.details button{
+				width: 8rem;
+				padding: 6px 9px;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			.details button a{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+			/*////////////////////////*/
+			#gallery{
+					width: 100%;
+					padding: 10px;
+					padding-top: 1.5rem;
+				}
+				.gallery-slider{
+					padding-top: 20px;
+				}
+			.slider{
+				height: 230px;
+				width: 90%;
+				display: grid;
+				padding: 10px;
+				margin-bottom: 40px;
+			}
+			#capture h2{
+				font-size: 12px;
+				letter-spacing: 0;
+				font-weight: 620;
+				padding-top: 20px;
+				margin-bottom:1rem;
+			}
+		.capture-content{
+				display: flex;
+				gap: 10px;
+				width: 97%;
+				margin: auto;
+				flex-direction: column;
+				justify-content: center;
+				flex-grow: 1;
+				padding: 10px;
+			}
+			.card{
+				width: 310px;
+				margin: auto;
+				margin-bottom: 1rem;
+				aspect-ratio: 1 / 1.1;
+				border-radius: 15px;
+			}
+			.card > img{
+				width: 100%;
+				height: 100%;
+			}
+			.card > .content{
+				height: 40%;
+				background: #100c20;
+				padding: 1.2rem;
+			}
+			.card .content h1{
+				color: white;
+				font-size: 16px;
+				letter-spacing: 0;
+				font-weight: 600;
+				padding-bottom: 7px;
+			}
+			.card .content p{
+				color: white;
+				font-size: 12px;
+				color: white;
+				font-weight: 420;
+				letter-spacing: 0;
+			}
+			#price{
+				padding-top: 10px;
+			}
+			#price h3{
+				text-align: center;
+				font-size: 18px;
+				letter-spacing: 1px;
+				font-weight: 550;
+				margin-bottom: 1.5rem;
+			}
+			#mid-card{
+				border-left: 1px solid orange;
+				border-right: 1px solid red;
+				box-shadow: 0 0 2px 3px orangered;
+				z-index: 5;
+			}
+		.pricing{
+				width: 100%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+		.price-card{
+				width: 73%;
+				padding: 10px;
+				border-radius: 5px;
+				background: transparent;
+				border:.1px solid grey;
+				margin-bottom: 2.5rem;
+				box-shadow: 0 0 1px 1px white;
+			}
+			.pop{
+				color: yellow;
+				font-size: 10px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.price-card h1{
+				font-size: 13px;
+				letter-spacing: 0;
+				font-weight: 500;
+				padding-top: 10px;
+				padding-bottom: 15px;
+				padding-left: 0;
+			}
+			.price-card h2{
+				font-size: 16px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 500;;
+				padding-bottom: 7px;
+				padding-left: 0;
+			}
+			.price-card bold{
+				font-weight: 400;
+				padding-left: 0;
+				font-size: 11px;
+			}
+			.price-card h5{
+				font-size: 11px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 450;;
+				padding-bottom: 10px;
+				padding-left: 0;
+			}
+			.price-card p{
+				font-size: 10px;
+				letter-spacing: 1px;
+				padding-left: 0;
+				color: white;
+				font-weight: 400;;
+				padding-bottom: 20px;
+			}
+			.price-card ul li{
+				list-style: none;
+				font-size: 10px;
+				padding-left: 0;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 350;
+				padding-bottom: 5px;
+			}
+			.price-card button{
+				width: 97%;
+				margin:auto;
+				margin-top: 1.5rem;
+				padding: 7px 10px;
+				box-shadow: 0 1px white;
+				margin-bottom: 15px;
+			}
+			.price-card button a{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.services{
+				width: 100%;
+				padding-top: 10px;
+			}
+			.services h3{
+				text-align: center;
+				font-weight: 620;
+				letter-spacing: 0;
+				font-size:15px;
+				margin-bottom: 10px;
+			}
+			.accordion {
+				padding: 10px;
+				width: 100%;
+				font-size: 10px;
+				font-weight: 400;
+			}
+			.panel {
+			  padding: 10px;
+			  font-size:9px;
+			  letter-spacing: 0;
+			  font-weight: 400;
+			  max-height: 0;
+			}
+			.accordion:after {
+			  content: '\02795'; /* Unicode character for "plus" sign (+) */
+			  font-size: 10px;
+			  font-weight: 200;
+			  margin-left: 5px;
+			}
+			#contact{
+				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
+				rgb(0, 0, 0)),url(images/bg-3.jpg);
+			}
+			.contact-form{
+				width: 97%;
+				margin: auto;
+				padding: 10x;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-direction: column;
+			}
+			form{
+				width: 83%;
+				margin-bottom: 2rem;
+				padding: 10px;
+				border-radius: 5px;
+				border: 1px solid white;
+				background: transparent;
+			}
+			form .footer-names{
+				display: block;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				width: 85%;
+				margin: auto;
+				justify-content: center;
+				align-items: center;
+			}
+			form .first{
+				margin-right: 0;
+			}
+			form input{
+				width: 100%;
+				margin-bottom: 1rem;
+				padding: 9px 10px;
+				outline: none;
+				color: white;
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				border: 1px solid white;
+				background-color: transparent;
+			}
+			form textarea{
+				width: 85%;
+				margin: auto;
+				display: block;
+				background: transparent;
+				border: 1px solid white;
+				padding: 7px 10px;
+				color: white;
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				margin-bottom: 1.5rem;
+			}
+			form .send{
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 10px;
+			}
+			.send strong{
+				font-weight: 400;
+				letter-spacing: 0;
+				color: whitesmoke;
+				padding-bottom: 15px;
+				font-size: 10px;
+				text-align: center;
+			}
+			.sub-btn{
+				width: 15rem;
+				padding: 7px 10px;
+				outline: none;
+				border: none;
+				background: royalblue;
+				color: white;
+				font-weight: 600;
+				letter-spacing: 1px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.info{
+				width: 75%;
+				padding: 10px;
+				text-align: center;
+				display: block;
+			}
+			.info h2{
+				font-size: 16px;
+				letter-spacing: 1px;
+				font-weight: 500;
+				padding-bottom: 10px;
+			}
+			.info p{
+				font-size: 10px;
+				letter-spacing: 0;
+				color: white;
+				font-weight: 400;
+				padding-bottom: 20px;
+			}
+			.socials a i{
+				display: inline-flex;
+				font-size: 18px;
+				width: 10px;
+				height: 10px;
+				padding: 5px 25px;
+			}
+			.info h4{
+				padding-top: 20px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				font-size: 13px;
+				margin-bottom: 10px;
+			}
+			.email{
+				font-size: 10px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.gotopbr i{
+				position: fixed;
+				width: 37px;
+				height: 37px;
+				bottom: 40px;
+				right: 7px;
+				line-height: 37px;
+				font-size: 18px;
+			}
+			footer p{
+				font-size: 11px;
+				letter-spacing: 1px;
+			}		
+}
+@media only screen and (min-width:430px){
+		.container{
+				width: 100%;
+				padding-top: 150px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.520),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 65vh;
+			}
+}
+@media only screen and (min-width:414px){
+		.container{
+				width: 100%;
+				padding-top: 160px;
+				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.520),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 60vh;
+			}
+}
+@media only screen and (min-width:412px){
+		.container{
+				width: 100%;
+				padding-top: 170px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.525),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 55vh;
+			}
+}
+@media only screen and (min-width:390px){
+		.container{
+				width: 100%;
+				padding-top: 160px;
+				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.520),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 60vh;
+			}
+}
+@media only screen and (max-width:375px){
+		.container{
+				width: 100%;
+				padding-top: 100px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.520),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 65vh;
+			}
+}
+@media only screen and (max-width:360px){
+		.container{
+				width: 100%;
+				padding-top: 100px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.510),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 60vh;
+			}
+}
+@media only screen and (max-width:333px){
+		.container{
+				width: 100%;
+				padding-top: 100px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				object-fit: cover;
+				min-height: 60vh;
+			}
+		.details h1{
+				font-size: 20px;
+				letter-spacing: 1px;
+				font-weight: 600;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.details p{
+				font-size: 10px;
+				width: 75%;
+				margin: auto;
+				padding-top: 10px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				padding-bottom: 1rem;
+			}
+			.details span{
+				font-size: 10px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.details button{
+				width: 8rem;
+				padding: 6px 9px;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			.details button a{
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+			/*////////////////////////*/
+			#gallery{
+					width: 100%;
+					padding: 10px;
+					padding-top: 1.5rem;
+				}
+				.gallery-slider{
+					padding-top: 20px;
+				}
+			.slider{
+				height: 220px;
+				width: 90%;
+				display: grid;
+				padding: 10px;
+				margin-bottom: 40px;
+			}
+			#capture h2{
+				font-size: 11px;
+				letter-spacing: 0;
+				font-weight: 620;
+				padding-top: 20px;
+				margin-bottom:1rem;
+			}
+		.capture-content{
+				display: flex;
+				gap: 10px;
+				width: 97%;
+				margin: auto;
+				flex-direction: column;
+				justify-content: center;
+				flex-grow: 1;
+				padding: 10px;
+			}
+			.card{
+				width: 260px;
+				margin: auto;
+				margin-bottom: 1rem;
+				aspect-ratio: 1 / 1.1;
+				border-radius: 15px;
+			}
+			.card > img{
+				width: 100%;
+				height: 100%;
+			}
+			.card > .content{
+				height: 40%;
+				background: #100c20;
+				padding: 1.1rem;
+			}
+			.card .content h1{
+				color: white;
+				font-size: 14px;
+				letter-spacing: 0;
+				font-weight: 550;
+				padding-bottom: 7px;
+			}
+			.card .content p{
+				color: white;
+				font-size: 11px;
+				color: white;
+				font-weight: 420;
+				letter-spacing: 0;
+			}
+			#price{
+				padding-top: 15px;
+			}
+			#price h3{
+				text-align: center;
+				font-size: 14px;
+				letter-spacing: 0;
+				font-weight: 550;
+				margin-bottom: 1.5rem;
+			}
+		.pricing{
+				width: 100%;
+				margin: auto;
+				flex-grow: 1;
+				padding: 5px;
+			}
+		.price-card{
+				width: 80%;
+				padding: 9px;
+				border-radius: 5px;
+				background: transparent;
+				border:.1px solid grey;
+				margin-bottom: 2.5rem;
+				box-shadow: 0 0 1px 1px white;
+			}
+			.pop{
+				color: yellow;
+				font-size: 10px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.price-card h1{
+				font-size: 13px;
+				letter-spacing: 0;
+				font-weight: 500;
+				padding-top: 10px;
+				padding-bottom: 15px;
+				padding-left: 0;
+			}
+			.price-card h2{
+				font-size: 16px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 500;;
+				padding-bottom: 7px;
+				padding-left: 0;
+			}
+			.price-card bold{
+				font-weight: 400;
+				padding-left: 0;
+				font-size: 11px;
+			}
+			.price-card h5{
+				font-size: 11px;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 450;;
+				padding-bottom: 10px;
+				padding-left: 0;
+			}
+			.price-card p{
+				font-size: 10px;
+				letter-spacing: 1px;
+				padding-left: 0;
+				color: white;
+				font-weight: 400;;
+				padding-bottom: 20px;
+			}
+			.price-card ul li{
+				list-style: none;
+				font-size: 10px;
+				padding-left: 0;
+				letter-spacing: 1px;
+				color: white;
+				font-weight: 350;
+				padding-bottom: 5px;
+			}
+			.price-card button{
+				width: 100%;
+				margin:auto;
+				margin-top: 1.5rem;
+				padding: 6px 10px;
+				box-shadow: 0 0px white;
+				margin-bottom: 15px;
+			}
+			.price-card button a{
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 600;
+			}
+			.services{
+				width: 100%;
+				padding-top: 10px;
+			}
+			.services h3{
+				text-align: center;
+				font-weight: 620;
+				letter-spacing: 0;
+				font-size:13px;
+				margin-bottom: 10px;
+			}
+			.accordion {
+				padding: 10px;
+				width: 100%;
+				font-size: 10px;
+				font-weight: 400;
+			}
+			.panel {
+			  padding: 5px;
+			  font-size:9px;
+			  letter-spacing: 0;
+			  font-weight: 400;
+			  line-height: 15px;
+			  max-height: 0;
+			}
+			.accordion:after {
+			  content: '\02795'; /* Unicode character for "plus" sign (+) */
+			  font-size: 10px;
+			  font-weight: 200;
+			  margin-left: 5px;
+			}
+			#contact{
+				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
+				rgb(0, 0, 0)),url(images/bg-3.jpg);
+			}
+			.contact-form{
+				width: 97%;
+				margin: auto;
+				padding: 10x;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-direction: column;
+			}
+			form{
+				width: 83%;
+				margin-bottom:1.5rem;
+				padding: 10px;
+				border-radius: 5px;
+				border: 1px solid white;
+				background: transparent;
+			}
+			form .footer-names{
+				display: block;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				width: 85%;
+				margin: auto;
+				justify-content: center;
+				align-items: center;
+			}
+			form .first{
+				margin-right: 0;
+			}
+			form input{
+				width: 100%;
+				margin-bottom: 1rem;
+				padding: 9px 10px;
+				outline: none;
+				color: white;
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				border: 1px solid white;
+				background-color: transparent;
+			}
+			form textarea{
+				width: 85%;
+				margin: auto;
+				display: block;
+				background: transparent;
+				border: 1px solid white;
+				padding: 7px 10px;
+				color: white;
+				font-size: 12px;
+				letter-spacing: 1px;
+				font-weight: 400;
+				margin-bottom: 1.5rem;
+			}
+			form .send{
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 10px;
+			}
+			.send strong{
+				font-weight: 400;
+				letter-spacing: 0;
+				color: whitesmoke;
+				padding-bottom: 15px;
+				font-size: 10px;
+				text-align: center;
+			}
+			.sub-btn{
+				width: 15rem;
+				padding: 7px 10px;
+				outline: none;
+				border: none;
+				background: royalblue;
+				color: white;
+				font-weight: 600;
+				letter-spacing: 1px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.info{
+				width: 75%;
+				padding: 10px;
+				text-align: center;
+				display: block;
+			}
+			.info h2{
+				font-size: 16px;
+				letter-spacing: 1px;
+				font-weight: 500;
+				padding-bottom: 10px;
+			}
+			.info p{
+				font-size: 10px;
+				letter-spacing: 0;
+				color: white;
+				font-weight: 400;
+				padding-bottom: 20px;
+			}
+			.socials a i{
+				display: inline-flex;
+				font-size: 18px;
+				width: 10px;
+				height: 10px;
+				padding: 5px 18px;
+			}
+			.info h4{
+				padding-top: 20px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				font-size: 13px;
+				margin-bottom: 10px;
+			}
+			.email{
+				font-size: 10px;
+				letter-spacing: 1px;
+				font-weight: 400;
+			}
+			.gotopbr i{
+				position: fixed;
+				width: 37px;
+				height: 37px;
+				bottom: 40px;
+				right: 7px;
+				line-height: 37px;
+				font-size: 18px;
+			}
+			footer p{
+				font-size: 11px;
+				letter-spacing: 1px;
+			}		
+}
+@media only screen and (max-width:320px){
+			.container{
+				width: 100%;
+				padding-top: 60px;
+				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
+				rgb(0, 0, 0)),url(images/bg-1.jpg);
+				min-height: 70vh;
+			}
+			.details button{
+				width: 7rem;
+				padding: 5px 7px;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			.details button a{
+				font-size: 11px;
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+}
