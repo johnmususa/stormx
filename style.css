@@ -1666,367 +1666,6 @@ footer{
 @media only screen and (max-width:425px){
 		.container{
 				width: 100%;
-				padding-top: 100px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 80vh;
-			}
-		.details h1{
-				font-size: 27px;
-				letter-spacing: 1.5px;
-				font-weight: 630;
-				padding-top: 10px;
-				padding-bottom: 10px;
-			}
-			.details p{
-				font-size: 10px;
-				width: 70%;
-				margin: auto;
-				text-align: center;
-				letter-spacing: 1px;
-				font-weight: 400;
-				padding-bottom: 1rem;
-			}
-			.details span{
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.details button{
-				width: 8rem;
-				padding: 6px 9px;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				border-radius: 20px;
-				cursor: pointer;
-			}
-			.details button a{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 500;
-			}
-			/*////////////////////////*/
-			#gallery{
-					width: 100%;
-					padding: 10px;
-					padding-top: 1.5rem;
-				}
-				.gallery-slider{
-					padding-top: 20px;
-				}
-			.slider{
-				height: 230px;
-				width: 90%;
-				display: grid;
-				padding: 10px;
-				margin-bottom: 40px;
-			}
-			#capture h2{
-				font-size: 13px;
-				letter-spacing: 0;
-				font-weight: 620;
-				padding-top: 20px;
-				margin-bottom:1rem;
-			}
-		.capture-content{
-				display: flex;
-				gap: 10px;
-				width: 97%;
-				margin: auto;
-				flex-direction: column;
-				justify-content: center;
-				flex-grow: 1;
-				padding: 10px;
-			}
-			.card{
-				width: 330px;
-				margin: auto;
-				margin-bottom: 1rem;
-				aspect-ratio: 1 / 1.1;
-				border-radius: 15px;
-			}
-			.card > img{
-				width: 100%;
-				height: 100%;
-			}
-			.card > .content{
-				height: 40%;
-				background: #100c20;
-				padding: 1.2rem;
-			}
-			.card .content h1{
-				color: white;
-				font-size: 16px;
-				letter-spacing: 0;
-				font-weight: 600;
-				padding-bottom: 7px;
-			}
-			.card .content p{
-				color: white;
-				font-size: 12px;
-				color: white;
-				font-weight: 420;
-				letter-spacing: 0;
-			}
-			#price h3{
-				text-align: center;
-				font-size: 18px;
-				letter-spacing: 1px;
-				font-weight: 550;
-				margin-bottom: 2rem;
-			}
-			#mid-card{
-				border-left: 1px solid orange;
-				border-right: 1px solid red;
-				box-shadow: 0 0 2px 3px orangered;
-				z-index: 5;
-			}
-		.pricing{
-				width: 100%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 5px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-			}
-		.price-card{
-				width: 70%;
-				padding: 10px;
-				border-radius: 5px;
-				background: transparent;
-				border:.1px solid grey;
-				margin-bottom: 2.5rem;
-				box-shadow: 0 0 1px 1px white;
-			}
-			.pop{
-				color: yellow;
-				font-size: 10px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.price-card h1{
-				font-size: 15px;
-				letter-spacing: 0;
-				font-weight: 500;
-				padding-top: 10px;
-				padding-bottom: 13px;
-				padding-left: 0;
-			}
-			.price-card h2{
-				font-size: 18px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 500;;
-				padding-bottom: 5px;
-				padding-left: 0;
-			}
-			.price-card bold{
-				font-weight: 430;
-			}
-			.price-card h5{
-				font-size: 12px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 450;;
-				padding-bottom: 10px;
-				padding-left: 0;
-			}
-			.price-card p{
-				font-size: 10px;
-				letter-spacing: 1px;
-				padding-left: 0;
-				color: white;
-				font-weight: 400;;
-				padding-bottom: 20px;
-			}
-			.price-card ul li{
-				list-style: none;
-				font-size: 11px;
-				padding-left: 0;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 350;
-				padding-bottom: 5px;
-			}
-			.price-card button{
-				width: 97%;
-				margin:auto;
-				margin-top: 1.5rem;
-				padding: 8px 10px;
-				box-shadow: 0 1px white;
-				margin-bottom: 15px;
-			}
-			.price-card button a{
-				font-size: 14px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.services{
-				width: 100%;
-				padding-top: 10px;
-			}
-			.services h3{
-				text-align: center;
-				font-weight: 620;
-				letter-spacing: 0;
-				font-size:15px;
-				margin-bottom: 10px;
-			}
-			.accordion {
-				padding: 15px;
-				width: 100%;
-				font-size: 11px;
-				font-weight: 400;
-			}
-			.panel {
-			  padding: 20px;
-			  font-size:10px;
-			  letter-spacing: 0;
-			  font-weight: 400;
-			  max-height: 0;
-			}
-			#contact{
-				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
-				rgb(0, 0, 0)),url(images/bg-3.jpg);
-			}
-			.contact-form{
-				width: 97%;
-				margin: auto;
-				padding: 10x;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				flex-direction: column;
-			}
-			form{
-				width: 83%;
-				margin-bottom: 2rem;
-				padding: 10px;
-				border-radius: 5px;
-				border: 1px solid white;
-				background: transparent;
-			}
-			form .footer-names{
-				display: block;
-				padding-top: 20px;
-				padding-bottom: 10px;
-				width: 90%;
-				margin: auto;
-				justify-content: center;
-				align-items: center;
-			}
-			form .first{
-				margin-right: 0;
-			}
-			form input{
-				width: 100%;
-				margin-bottom: 1rem;
-				padding: 9px 10px;
-				outline: none;
-				color: white;
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				border: 1px solid white;
-				background-color: transparent;
-			}
-			form textarea{
-				width: 90%;
-				margin: auto;
-				display: block;
-				background: transparent;
-				border: 1px solid white;
-				padding: 7px 10px;
-				color: white;
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				margin-bottom: 1.5rem;
-			}
-			form .send{
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-				align-items: center;
-				margin-bottom: 10px;
-			}
-			.send strong{
-				font-weight: 400;
-				letter-spacing: 0;
-				color: whitesmoke;
-				padding-bottom: 15px;
-				font-size: 10px;
-				text-align: center;
-			}
-			.sub-btn{
-				width: 15rem;
-				padding: 7px 10px;
-				outline: none;
-				border: none;
-				background: royalblue;
-				color: white;
-				font-weight: 600;
-				letter-spacing: 1px;
-				cursor: pointer;
-				border-radius: 5px;
-			}
-			.info{
-				width: 70%;
-				padding: 10px;
-				text-align: center;
-				display: block;
-			}
-			.info h2{
-				font-size: 18px;
-				letter-spacing: 1px;
-				font-weight: 500;
-				padding-bottom: 10px;
-			}
-			.info p{
-				font-size: 10px;
-				letter-spacing: 0;
-				color: white;
-				font-weight: 400;
-				padding-bottom: 20px;
-			}
-			.socials a i{
-				display: inline-flex;
-				font-size: 20px;
-				width: 13px;
-				height: 13px;
-				padding: 5px 20px;
-			}
-			.info h4{
-				padding-top: 20px;
-				font-weight: 500;
-				letter-spacing: 1px;
-				font-size: 15px;
-				margin-bottom: 10px;
-			}
-			.email{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.gotopbr i{
-				position: fixed;
-				width: 40px;
-				height: 40px;
-				bottom: 40px;
-				right: 7px;
-				line-height: 40px;
-				font-size: 20px;
-			}
-			footer p{
-				font-size: 11px;
-				letter-spacing: 1px;
-			}		
-}
-@media only screen and (max-width:425px){
-		.container{
-				width: 100%;
 				padding-top: 80px;
 				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
 				rgb(0, 0, 0)),url(images/bg-1.jpg);
@@ -2254,7 +1893,7 @@ footer{
 			  max-height: 0;
 			}
 			.accordion:after {
-			  content: '\02795'; /* Unicode character for "plus" sign (+) */
+			  content: '\02795';
 			  font-size: 10px;
 			  font-weight: 200;
 			  margin-left: 5px;
@@ -2396,7 +2035,7 @@ footer{
 				letter-spacing: 1px;
 			}		
 }
-@media only screen and (min-width:430px){
+@media only screen and (max-width:430px){
 		.container{
 				width: 100%;
 				padding-top: 150px;
@@ -2405,7 +2044,7 @@ footer{
 				min-height: 65vh;
 			}
 }
-@media only screen and (min-width:414px){
+@media only screen and (max-width:414px){
 		.container{
 				width: 100%;
 				padding-top: 160px;
@@ -2414,7 +2053,7 @@ footer{
 				min-height: 60vh;
 			}
 }
-@media only screen and (min-width:412px){
+@media only screen and (max-width:412px){
 		.container{
 				width: 100%;
 				padding-top: 170px;
@@ -2423,7 +2062,7 @@ footer{
 				min-height: 55vh;
 			}
 }
-@media only screen and (min-width:390px){
+@media only screen and (max-width:390px){
 		.container{
 				width: 100%;
 				padding-top: 160px;
