@@ -3,92 +3,102 @@
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	transition: all .2s ease-in-out;
+	transition: all .3s ease-in-out;
 	font-family: "Poppins", sans-serif;
 }
-.container{
+header{
 	width: 100%;
-	scroll-behavior: smooth;
-	padding-top: 190px;
-	background: #111;
-	background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.534),
+	min-height: 100vh;
+	display: flex;
+	padding: 20px;
+	justify-content: center;
+	align-items: center;
+	background: #333;
+	background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.540),
 	rgb(0, 0, 0)),url(images/bg-1.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	object-fit: cover;
-	min-height: 90vh;
 }
-.details{
-	width: 97%;
-	text-align: center;
-	justify-content: center;
+.banner{
+	width: 90%;
+	border-radius: 3px;
 	margin: auto;
-	padding: 10px;
-	max-width: 600;
-	padding-left: 8px;
-	padding-right: 8px;
+	border: .1px solid grey;
 	flex-grow: 1;
+	padding: 20px;
+	backdrop-filter: blur(3px);
+	flex-wrap: wrap;
+	text-align: center;
+	align-items: flex-start;
 }
-.details h1{
-	font-size: 40px;
-	color: white;
+.banner h1{
+	font-size: 43px;
 	letter-spacing: 2px;
-	font-weight: 700;
-	padding-top: 10px;
+	font-weight: 720;
 	padding-bottom: 10px;
-}
-.details p{
-	font-size: 13px;
 	color: white;
-	letter-spacing: 1px;
-	font-weight: 400;
-	padding-bottom: 1rem;
+	animation: anim 2s forwards ease;
 }
-.details span{
+.banner p{
 	font-size: 15px;
 	color: white;
+	letter-spacing: 1px;
+	padding-bottom: 2rem;
+	max-width: 600;
+	font-weight: 400;
+	animation: anim 1.5s 1s backwards;
+}
+.banner span{
+	font-size: 16px;
 	letter-spacing: 1px;
 	font-weight: 600;
 	color: red;
+	animation: anim 1.5s 1s backwards;
 }
-.details button{
-	width: 10rem;
-	padding: 7px 10px;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+.banner button{
+	width: 11rem;
+	padding: 12px 10px;
 	border: none;
 	background: red;
 	outline: none;
-	border-radius: 20px;
+	border-radius: 5px;
 	cursor: pointer;
+	margin-bottom: 1rem;
+	animation: anim 3s backwards;
 }
-.details button a{
-	font-size: 15px;
+.banner button a{
+	font-size: 14px;
 	letter-spacing: 1px;
 	font-weight: 500;
 	color: white;
 	text-decoration: none;
 }
-.details button:hover{
+.banner button:hover{
 	background: transparent;
 	border: 1px solid white;
+	transition: .2s ease-in;
 }
-.details button:active{
+.banner button:active{
 	transform: translateY(1.1rem);
 }
-/*//////////////////////*/
+
+@keyframes anim {
+	100%{
+		animation-delay: 2s ease;
+	}
+}
+/*/////////////////////////////////*/
+/*////////////////////////////////*/
 #gallery{
 	width: 100%;
 	padding: 20px;
 	background: #000;
-	scroll-behavior: smooth;
-	padding-top: 2rem;
 }
 .gallery-slider{
-	width: 97%;
+	width: 100%;
 	margin: auto;
-	padding-top: 30px;
 	flex-grow: 1;
 }
 .slider{
@@ -96,7 +106,7 @@
 	background: #111;
 	margin: auto;
 	position: relative;
-	width: 90%;
+	width: 95%;
 	display: grid;
 	padding: 15px;
 	place-items: center;
@@ -112,6 +122,7 @@
 }
 .slide-track:hover{
 	animation-play-state: paused;
+	transition: .3s ease;
 }
 @keyframes scroll{
 	0%{
@@ -122,11 +133,11 @@
 	}
 }
 .slide{
-	height: 200px;
-	width: 250px;
+	height: 230px;
+	width: 280px;
 	display: flex;
+	padding: 5px;
 	align-items: center;
-	padding: 15px;
 	perspective: 100px;
 }
 img{
@@ -136,6 +147,7 @@ img{
 img:hover{
 	transform: translateZ(10px);
 	transition: all .3s ease;
+	filter: grayscale(50%);
 }
 .slider::before,
 .slider::after{
@@ -155,37 +167,38 @@ img:hover{
 	top: 0;
 	transform: rotateZ(100deg);
 }
-/*/////////////////////////////*/
+/*/////////////////////////////////*/
+/*////////////////////////////////*/
 #capture{
 	width: 100%;
-	scroll-behavior: smooth;
+	padding-top: 40px;
 }
 #capture h2{
 	text-align: center;
-	font-size: 25px;
+	font-size:27px;
+	max-width: 600;
 	letter-spacing: 1px;
 	color: black;
 	font-weight: 650;
-	padding-top: 20px;
 	margin-bottom:3rem;
 }
 .capture-content{
 	display: flex;
-	gap: 35px;
+	gap: 20px;
 	scroll-behavior: smooth;
-	width: 95%;
+	width: 100%;
 	margin: auto;
 	flex-grow: 1;
-	padding: 20px;
-	background: #ddd;
+	padding: 20px 25px 25px 25px;
+	background: #eee;
 }
 .card{
-	width: 500px;
+	width: 550px;
 	aspect-ratio: 1 / 1.2;
 	border-radius: 16px;
 	overflow: hidden;
 	position: relative;
-	background: green;
+	background: #333;
 	cursor: pointer;
 }
 .card > img{
@@ -214,13 +227,13 @@ img:hover{
 }
 .card .content h1{
 	color: white;
-	font-size: 20px;
+	font-size: 23px;
 	letter-spacing: 1px;
 	font-weight: 600;
 }
 .card .content p{
 	color: white;
-	font-size: 15px;
+	font-size: 14px;
 	color: white;
 	font-weight: 500;
 	letter-spacing: 1px;
@@ -235,12 +248,14 @@ img:hover{
 }
 .container:hover > .card:not(:hover){
 	filter: blur(5px);
+	transition: .2s ease;
 }
-/*/////////////////////*/
+/*////////////////////////////////*/
+/*///////////////////////////////*/
 #price{
 	width: 100%;
-	padding-top: 40px;
-	scroll-behavior: smooth;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
 	rgb(0, 0, 0)),url(images/bg-2.jpg);
 	background-position: center;
@@ -254,30 +269,29 @@ img:hover{
 	letter-spacing: 2px;
 	font-weight: 630;
 	color: white;
-	margin-bottom: 2rem;
+	margin-bottom: 2.5rem;
 }
 .pricing{
 	width: 100%;
-	margin: auto;
 	background: transparent;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	flex-grow: 1;
 	padding: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	column-gap: 8px;
 }
 .price-card{
-	width: 34%;
-	padding: 10px;
-	border-radius: 5px;
+	width: 35%;
+	border-radius: 10px;
+	padding: 8px;
 	background: transparent;
-	border:.1px solid grey;
-	margin-bottom: 2rem;
 	box-shadow: 0 0 1px 1px white;
+	align-items: flex-start;
 }
 #mid-card{
-	border-left: 1px solid white;
-	border-right: 1px solid white;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
 	box-shadow: 0 0 5px 3px white;
 	z-index: 5;
 }
@@ -288,32 +302,29 @@ img:hover{
 	font-weight: 410;
 	border: 1px solid grey;
 	padding: 7px 10px;
+	margin-top: 5px;
 	border-radius: 20px;
 	text-align: center;
 }
 .price-card h1{
-	font-size: 20px;
-	letter-spacing: 1px;
 	color: white;
-	font-weight: 500;
-	padding-top: 10px;
-	padding-bottom: 15px;
-	text-align: center;
-	padding-left: 10px;
+	font-size: 19px;
+	letter-spacing: 1px;
+	font-weight: 550;
+	padding-bottom: 10px;
+	padding-top: 12px;
 }
 .price-card h2{
 	font-size: 25px;
 	letter-spacing: 1px;
 	color: white;
 	font-weight: 500;;
-	padding-bottom: 5px;
-	padding-left: 10px;
+	padding-bottom: 2px;
 }
 .price-card bold{
 	color: yellow;
 	font-weight: 500;
 	letter-spacing: 1px;
-	padding-left: 10px;
 }
 .price-card h5{
 	font-size: 15px;
@@ -321,51 +332,51 @@ img:hover{
 	color: white;
 	font-weight: 500;;
 	padding-bottom: 10px;
-	padding-left: 10px;
 }
 .price-card p{
-	font-size: 13px;
+	font-size: 12px;
 	letter-spacing: 1px;
-	padding-left: 10px;
 	color: white;
 	font-weight: 400;;
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 }
 .price-card ul li{
 	list-style: none;
 	font-size: 13px;
-	padding-left: 10px;
 	letter-spacing: 1px;
 	color: white;
 	font-weight: 350;
 	padding-bottom: 5px;
 }
 .price-card button{
-	width: 97%;
+	width: 100%;
 	margin-top: 1.2rem;
 	border: none;
-	margin-left: 8px;
-	box-shadow: 0 3px white;
+	box-shadow: 0 3px grey;
 	background: transparent;
 	outline: none;
 	border: 1px solid white;
 	cursor: pointer;
 	border-radius: 5px;
-	padding: 8px 10px;
-	margin-bottom: 2rem;
+	padding: 10px 10px;
+	margin-bottom: 1rem;
 }
 .price-card button a{
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 15px;
 	color: white;
 	letter-spacing: 2px;
-	font-weight: 600;
+	font-weight: 500;
+}
+.price-card button:hover{
+	background-color: darkred;
 }
 .price-card button:active{
 	transform: translateY(1.1rem);
 	cursor: pointer;
 }
-/*////////////////////////////*/
+/*///////////////////////////////*/
+/*//////////////////////////////*/
 .services{
 	width: 100%;
 	scroll-behavior: smooth;
@@ -385,9 +396,9 @@ img:hover{
   background-color: darkred;
 	color: #fff;
 	cursor: pointer;
-	padding: 18px;
+	padding: 20px;
 	width: 100%;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 400;
 	text-align: left;
 	border: none;
@@ -410,7 +421,7 @@ img:hover{
   padding: 25px;
   background-color: #000;
   color: white;
-  font-size:15px;
+  font-size:12px;
   letter-spacing: 1px;
   font-weight: 400;
   max-height: 0;
@@ -423,16 +434,16 @@ img:hover{
   color: white;
   font-weight: 300;
   float: right;
-  margin-left: 5px;
+  margin-left: 3px;
 }
 .active:af {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
-/*////////////////////////*/
+/*/////////////////////////////////*/
+/*////////////////////////////////*/
 #contact{
 	width: 100%;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding:45px 10px 45px 10px;
 	background: #111;
 	background-image:linear-gradient(to left,rgba(0, 0, 0, 0.534),
 	rgb(0, 0, 0)),url(images/bg-3.jpg);
@@ -440,92 +451,93 @@ img:hover{
 	background-repeat: no-repeat;
 	background-size: cover;
 	object-fit: cover;
-	scroll-behavior: smooth;
 }
 .contact-form{
-	width: 97%;
-	margin: auto;
-	padding: 10x;
 	display: flex;
 	justify-content: space-between;
+	padding: 15px;
 	align-items: center;
+	flex-grow: 1;
+	flex-wrap: wrap;
 }
 form{
-	width: 58%;
-	padding: 10px;
-	border-radius: 5px;
 	border: 1px solid white;
-	background: transparent;
+	width: 55%;
+	padding: 15px;
+	text-align: center;
+	border-radius: 5px;
 }
-form .footer-names{
-	display: flex;
-	margin-top: 10px;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 1rem;
-}
-form .first{
-	margin-right: 10px;
+form .footernames{
+	display: inline-flex;
+	column-gap: 10px;
 }
 form input{
-	width: 18rem;
-	padding: 7px 10px;
-	outline: none;
-	color: white;
-	font-size: 15px;
-	letter-spacing: 1px;
-	font-weight: 400;
-	border: 1px solid white;
-	background-color: transparent;
-}
-form textarea{
-	width: 90%;
+	width: 47%;
+	padding: 10px 10px;
 	margin: auto;
-	display: block;
+	outline: none;
+	border: none;
+	font-size: 13px;
+	letter-spacing: 1px;
+	color: white;
 	background: transparent;
 	border: 1px solid white;
-	padding: 8px 10px;
-	color: white;
-	font-size: 15px;
+}
+form ::placeholder{
+	color: whitesmoke;
 	letter-spacing: 1px;
-	font-weight: 400;
+	font-size: 12px;
+}
+form textarea{
+	width: 95%;
+	margin-top: 1rem;
+	border: 1px solid white;
+	color: white;
+	font-size: 14px;
+	padding: 10px 10px;
+	letter-spacing: 1px;
+	outline: none;
 	margin-bottom: 1.5rem;
+	background: transparent;
+}
+form textarea ::input{
+	color: whitesmoke;
+	letter-spacing: 1px;
+	font-size: 12px;
 }
 form .send{
-	display: flex;
+	display: inline-flex;
 	justify-content: space-evenly;
 	align-items: center;
-	margin-bottom: 10px;
+	column-gap: 15px;
 }
 .send strong{
+	font-size: 12px;
 	font-weight: 400;
-	letter-spacing: 1px;
 	color: whitesmoke;
-	font-size: 13px;
+	letter-spacing: 1px;
 }
 .sub-btn{
 	width: 8rem;
-	padding: 7px 10px;
+	padding: 9px 10px;
 	outline: none;
 	border: none;
-	background: royalblue;
+	background: blue;
 	color: white;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: 1px;
 	cursor: pointer;
 	border-radius: 5px;
 }
 .info{
 	width: 40%;
-	padding: 10px;
-	text-align: left;
-	display: block;
+	align-items: flex-start;
 }
 .info h2{
-	font-size: 25px;
+	font-size: 30px;
 	letter-spacing: 1px;
 	color: white;
-	font-weight: 500;
+	font-weight: 520;
 	text-transform: capitalize;
 	padding-bottom: 10px;
 }
@@ -542,13 +554,17 @@ form .send{
 }
 .socials a i{
 	display: inline-flex;
-	font-size: 25px;
-	width: 20px;
-	height: 20px;
+	font-size: 23px;
+	width: 18px;
+	height: 18px;
 	color: white;
 	list-style: none;
 	text-decoration: none;
-	padding: 5px 30px;
+	padding: 5px 25px;
+}
+.socials i{
+	text-decoration: none;
+	list-style: none;
 }
 .socials a i:hover{
 	color: yellow;
@@ -564,21 +580,23 @@ form .send{
 }
 .email{
 	color: #ddd;
-	font-size: 14px;
+	font-size: 13px;
 	letter-spacing: 1px;
 	font-weight: 400;
 	text-decoration: none;
 }
-/*////////////////////////*/
+/*//////////////////////////////*/
+/*/////////////////////////////*/
 footer{
 	width: 100%;
 	scroll-behavior: smooth;
 	text-align: center;
 	padding: 30px;
 	color: white;
+	font-size: 15px;
 	font-weight: 500;
 	letter-spacing: 1px;
-	background: #111;
+	background: #000;
 }
 .gotopbr i{
 	position: fixed;
@@ -586,1892 +604,1607 @@ footer{
 	height: 50px;
 	scroll-behavior: smooth;
 	background: darkred;
-	bottom: 40px;
+	bottom: 30px;
 	right: 30px;
 	border-radius: 5px;
 	text-decoration: none;
 	text-align: center;
 	line-height: 50px;
 	color: white;
-	font-size: 22px;
+	font-size: 21px;
 }
 .gotopbr i:hover{
 	background: red;
 }
-/*///responsive view//////*/
-/*///////////////////////*/
-@media only screen and (max-width:904px){
-		.capture-content{
-				display: flex;
-				gap: 25px;
-				scroll-behavior: smooth;
-				width: 95%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 20px;
-				background: #ddd;
-			}
-			.card{
-				width: 600px;
-				aspect-ratio: 1 / 1.2;
-				border-radius: 16px;
-				overflow: hidden;
-				position: relative;
-				background: green;
-				cursor: pointer;
-			}
+/*////////////////////////////////////*/
+/*//////START-RESPONSIVE-VIEW////////*/
+/*//////////////////////////////////*/
+@media screen and (max-width:1024px) and (min-width:513px){
+	.banner h1{
+		font-size: 37px;
+		letter-spacing: 2px;
+		font-weight: 650;
+		padding-bottom: 10px;
+	}
+	.banner p{
+		font-size: 13px;
+		letter-spacing: 1px;
+		padding-bottom: 2rem;
+		max-width: 600;
+		font-weight: 400;
+	}
+	.banner span{
+		font-size: 15px;
+		letter-spacing: 1px;
+		font-weight: 650;
+	}
+	.banner button{
+		width: 10rem;
+		padding: 10px 10px;
+		margin-bottom: 1rem;
+	}
+	.banner button a{
+		font-size: 13px;
+		letter-spacing: 1px;
+		font-weight: 420;
+	}
 
-		.pricing{
-				width: 100%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 10px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-			}
-		.price-card{
-				width: 50%;
-				padding: 10px;
-				border-radius: 5px;
-				background: transparent;
-				border:.1px solid grey;
-				margin-bottom: 2.5rem;
-				box-shadow: 0 0 1px 1px white;
-			}
-			.contact-form{
-				width: 97%;
-				margin: auto;
-				padding: 10x;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-			form{
-				width: 60%;
-				padding: 10px;
-				border-radius: 5px;
-				border: 1px solid white;
-				background: transparent;
-			}
-			form .first{
-				margin-right: 10px;
-			}
-			form input{
-				width: 16rem;
-				padding: 7px 10px;
-				outline: none;
-				color: white;
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				border: 1px solid white;
-				background-color: transparent;
-			}
-			form textarea{
-				width: 90%;
-				margin: auto;
-				display: block;
-				background: transparent;
-				border: 1px solid white;
-				padding: 7px 10px;
-				color: white;
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				margin-bottom: 1.5rem;
-			}
-			.send strong{
-				font-weight: 400;
-				letter-spacing: 1px;
-				color: whitesmoke;
-				font-size: 11px;
-			}
-			.sub-btn{
-				width: 7rem;
-				padding: 7px 10px;
-				outline: none;
-				border: none;
-				background: royalblue;
-				color: white;
-				font-weight: 600;
-				letter-spacing: 1px;
-				cursor: pointer;
-				border-radius: 5px;
-			}
-			.info{
-				width: 35%;
-				padding: 10px;
-				text-align: left;
-				display: block;
-			}
-			.info h2{
-				font-size: 20px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 500;
-				text-transform: capitalize;
-				padding-bottom: 10px;
-			}
-			.info p{
-				font-size: 11px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 400;
-				padding-bottom: 20px;
-			}
-			.socials a i{
-				display: inline-flex;
-				font-size: 20px;
-				width: 15px;
-				height: 15px;
-				color: white;
-				list-style: none;
-				text-decoration: none;
-				padding: 5px 25px;
-			}
-			.info h4{
-				padding-top: 20px;
-				color: white;
-				font-weight: 500;
-				letter-spacing: 1px;
-				font-size: 17px;
-				margin-bottom: 10px;
-			}
-			.email{
-				color: #ddd;
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				text-decoration: none;
-			}
-			.gotopbr i{
-				position: fixed;
-				width: 50px;
-				height: 50px;
-				scroll-behavior: smooth;
-				background: darkred;
-				bottom: 40px;
-				right: 10px;
-				border-radius: 5px;
-				text-decoration: none;
-				text-align: center;
-				line-height: 50px;
-				color: white;
-				font-size: 20px;
-			}
+	#capture{
+		width: 100%;
+		padding-top: 30px;
+	}
+	#capture h2{
+		font-size:24px;
+		max-width: 670;
+		letter-spacing: 1px;
+		font-weight: 600;
+		margin-bottom:3rem;
+	}
+	.capture-content{
+		display: flex;
+		gap: 12px;
+		scroll-behavior: smooth;
+		width: 100%;
+		flex-grow: 1;
+		padding: 20px 20px 25px 20px;
+	}
+	.card > img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: 0.3s cubic-bezier(0.55,0.055,0.675,0.19);
+	}
+	.card > .content{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 40%;
+		background: #100c20;
+		padding: 1.4rem;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		transform: translate(0, 100%);
+		transition:  opacity 0.5s ease, transform 0.3s ease;
+	}
+	.card .content h1{
+		font-size: 16px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 5px;
+	}
+	.card .content p{
+		font-size: 13px;
+		font-weight: 420;
+		letter-spacing: 1px;
+	}
+	.card:hover > .content{
+		opacity: 1;
+		cursor: pointer;
+		transform: translate(0, 0);
+	}
+	.container:hover > .card:not(:hover){
+		filter: blur(5px);
+		transition: .2s ease;
+	}
+	#price h3{
+		font-size: 20px;
+		letter-spacing: 1.5px;
+		font-weight: 600;
+		margin-bottom: 2.5rem;
+	}
+	.price-card{
+		width: 35%;
+		padding: 8px;
+		align-items: flex-start;
+	}
+	#mid-card{
+		border-left: 1px solid grey;
+		border-right: 1px solid grey;
+		box-shadow: 0 0 4px 2px white;
+		z-index: 5;
+	}
+	.pop{
+		color: yellow;
+		font-size: 12px;
+		letter-spacing: 1.5px;
+		font-weight: 400;
+		padding: 7px 10px;
+		margin-top: 5px;
+	}
+	.price-card h1{
+		font-size: 16px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 10px;
+		padding-top: 12px;
+	}
+	.price-card h2{
+		font-size: 23px;
+		letter-spacing: 1px;
+		font-weight: 500;;
+		padding-bottom: 2px;
+	}
+	.price-card bold{
+		color: yellow;
+		font-weight: 420;
+		letter-spacing: 1px;
+		font-size: 12px;
+	}
+	.price-card h5{
+		font-size: 13px;
+		letter-spacing: 1px;
+		font-weight: 420;;
+		padding-bottom: 10px;
+	}
+	.price-card p{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;;
+		padding-bottom: 15px;
+	}
+	.price-card ul li{
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 350;
+		padding-bottom: 5px;
+	}
+	.price-card button{
+		width: 100%;
+		margin-top: 1.2rem;
+		box-shadow: 0 3px grey;
+		border-radius: 5px;
+		padding: 10px 10px;
+		margin-bottom: 1rem;
+	}
+	.price-card button a{
+		font-size: 13px;
+		letter-spacing: 2px;
+		font-weight: 420;
+	}
+	.services h3{
+		font-weight: 600;
+		letter-spacing: 1px;
+		font-size: 23px;
+		margin-bottom: 2rem;
+	}
+	.accordion {
+		padding: 20px;
+		width: 100%;
+		font-size: 13px;
+		font-weight: 400;
+	}
+	.panel {
+	  padding: 25px;
+	  font-size:11px;
+	  letter-spacing: 1px;
+	  font-weight: 400;
+	  max-height: 0;
+	}
+	.accordion:after {
+	  font-size: 11px;
+	  font-weight: 300;
+	  margin-left: 3px;
+	}
+
+	form{
+		border: 1px solid white;
+		width: 55%;
+		padding: 10px;
+		text-align: center;
+		border-radius: 5px;
+	}
+	form .footernames{
+		display: inline-flex;
+		column-gap: 10px;
+	}
+	form input{
+		width: 47%;
+		padding: 10px 10px;
+		margin: auto;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+	form ::placeholder{
+		letter-spacing: 1px;
+		font-size: 11px;
+	}
+	form textarea{
+		width: 95%;
+		margin-top: 1rem;
+		font-size: 12px;
+		padding: 10px 10px;
+		letter-spacing: 1px;
+		margin-bottom: 1.5rem;
+	}
+	form textarea ::input{
+		letter-spacing: 1px;
+		font-size: 11px;
+	}
+	.send strong{
+		font-size: 11px;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+	.sub-btn{
+		width: 7rem;
+		padding: 9px 10px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		border-radius: 5px;
+	}
+	.info{
+		width: 40%;
+		align-items: flex-start;
+	}
+	.info h2{
+		font-size: 25px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		text-transform: capitalize;
+		padding-bottom: 10px;
+	}
+	.info p{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+		padding-bottom: 20px;
+	}
+	.socials a i{
+		display: inline-flex;
+		font-size: 23px;
+		width: 17px;
+		height: 17px;
+		padding: 5px 23px;
+	}
+	.info h4{
+		padding-top: 15px;
+		font-weight: 500;
+		letter-spacing: 2px;
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	.email{
+		color: #ddd;
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	footer{
+		width: 100%;
+		padding: 25px;
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		background: #000;
+	}
+	.gotopbr i{
+		width: 50px;
+		height: 50px;
+		bottom: 30px;
+		right: 15px;
+		line-height: 50px;
+		font-size: 20px;
+	}
 }
-@media only screen and (max-width:768px){
-		html{
-			font-size: calc(40px, 80vw, 105px);
+@media screen and (max-width:900px) and (min-width:513px){
+	.banner h1{
+		font-size: 34px;
+		letter-spacing: 2px;
+		font-weight: 600;
+		padding-bottom: 10px;
+	}
+	.banner p{
+		font-size: 12px;
+		letter-spacing: 1px;
+		padding-bottom: 1.5rem;
+		max-width: 600;
+		font-weight: 400;
+	}
+	.banner span{
+		font-size: 13px;
+		letter-spacing: 1px;
+		font-weight: 500;
+	}
+	.banner button{
+		width: 10rem;
+		padding: 10px 10px;
+		margin-bottom: 1rem;
+	}
+	.banner button a{
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	#capture h2{
+		font-size:20px;
+		max-width: 650;
+		letter-spacing: 1px;
+		font-weight: 500;
+		margin-bottom:2.5rem;
+	}
+	.capture-content{
+		display: flex;
+		gap: 10px;
+		scroll-behavior: smooth;
+		width: 100%;
+		flex-grow: 1;
+		padding: 20px 15px 25px 15px;
+	}
+	.card .content h1{
+		font-size: 14px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 5px;
+	}
+	.card .content p{
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+	#price h3{
+		font-size: 20px;
+		letter-spacing: 1.5px;
+		font-weight: 500;
+		margin-bottom: 1.5rem;
+	}
+	.pricing{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		flex-grow: 1;
+		padding: 20px;
+	}
+	.price-card{
+		width: 90%;
+		margin: auto;
+		border-radius: 10px;
+		padding: 20px;
+		align-items: flex-start;
+	}
+	#mid-card{
+		margin-block: 3rem;
+	}
+	.pop{
+		color: yellow;
+		font-size: 12px;
+		letter-spacing: 2px;
+		font-weight: 400;
+		border: 1px solid grey;
+		padding: 12px 10px;
+		margin-top: 5px;
+		border-radius: 20px;
+	}
+	.price-card h1{
+		font-size: 20px;
+		letter-spacing: 1px;
+		font-weight: 520;
+		padding-bottom: 10px;
+		padding-top: 15px;
+	}
+	.price-card h2{
+		font-size: 27px;
+		letter-spacing: 2px;
+		color: white;
+		font-weight: 550;
+		padding-bottom: 2px;
+	}
+	.price-card bold{
+		color: yellow;
+		font-weight: 500;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+	.price-card h5{
+		font-size: 15px;
+		letter-spacing: 1px;
+		color: white;
+		font-weight: 500;;
+		padding-bottom: 10px;
+	}
+	.price-card p{
+		font-size: 14px;
+		letter-spacing: 1px;
+		color: white;
+		font-weight: 400;;
+		padding-bottom: 15px;
+	}
+	.price-card ul li{
+		list-style: none;
+		font-size: 14px;
+		letter-spacing: 1px;
+		color: white;
+		font-weight: 350;
+		padding-bottom: 8px;
+	}
+	.price-card button{
+		width: 100%;
+		margin-top: 1.2rem;
+		box-shadow: none;
+		border-radius: 30px;
+		padding: 12px 10px;
+		margin-bottom: 1rem;
+	}
+	.price-card button a{
+		font-size: 14px;
+		letter-spacing: 2px;
+		font-weight: 500;
+	}
+
+	.services{
+		width: 100%;
+		padding-top: 20px;
+	}
+	.services h3{
+		font-weight: 500;
+		letter-spacing: 1px;
+		font-size: 20px;
+		margin-bottom: 2rem;
+	}
+	.accordion {
+		padding: 18px;
+		width: 100%;
+		font-size: 12px;
+		font-weight: 400;
+	}
+	.panel {
+	  padding: 23px;
+	  font-size:10px;
+	  letter-spacing: 1px;
+	  font-weight: 400;
+	  max-height: 0;
+	}
+	.accordion:after {
+	  font-size: 10px;
+	  font-weight: 300;
+	  margin-left: 3px;
+	}
+	#contact{
+		width: 100%;
+		padding:35px 10px 35px 10px;
+	}
+	.contact-form{
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+		flex-direction: column;
+		align-items: center;
+		flex-grow: 1;
+		flex-wrap: wrap;
+	}
+	form{
+		width:80%;
+		padding: 15px;
+		margin-bottom: 2rem;
+		border-radius: 5px;
+	}
+	form .footernames{
+		display: inline-flex;
+		column-gap: 10px;
+	}
+	form input{
+		width: 47%;
+		padding: 11px 10px;
+		margin: auto;
+		font-size: 13px;
+		letter-spacing: 1px;
+	}
+	form ::placeholder{
+		color: whitesmoke;
+		letter-spacing: 1px;
+		font-size: 13px;
+	}
+	form textarea{
+		width: 100%;
+		margin-top: 1rem;
+		border: 1px solid white;
+		color: white;
+		font-size: 14px;
+		padding: 10px 10px;
+		lett3r-spacing: 1px;
+		margin-bottom: 1.5rem;
+	}
+	form textarea ::input{
+		color: whitesmoke;
+		letter-spacing: 1px;
+		font-size: 13px;
+	}
+	form .send{
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 20px;
+	}
+	.send strong{
+		font-size: 13px;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+	.sub-btn{
+		width: 9rem;
+		padding: 8px 9px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		border-radius: 5px;
+	}
+	.info{
+		width: 80%;
+		text-align: center;
+		align-items: flex-start;
+	}
+	.info h2{
+		font-size: 25px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		text-transform: capitalize;
+		padding-bottom: 10px;
+	}
+	.info p{
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 400;
+		padding-bottom: 20px;
+	}
+	.socials a i{
+		display: inline-flex;
+		font-size: 25px;
+		width: 18px;
+		height: 18px;
+		padding: 8px 30px;
+	}
+	.info h4{
+		padding-top: 21px;
+		font-weight: 500;
+		letter-spacing: 2px;
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	.email{
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	footer{
+		width: 100%;
+		padding: 27px;
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		background: #000;
+	}
+	.gotopbr i{
+		width: 45px;
+		height: 45px;
+		bottom: 30px;
+		right: 12px;
+		line-height: 45px;
+		font-size: 18px;
+		z-index: 5;
+	}
+}
+@media screen and (max-width:768px) and (min-width:513px){
+	.banner{
+		width: 90%;
+		margin: auto;
+		padding: 15px;
+		backdrop-filter: blur(1px);
+	}
+	.banner h1{
+		font-size: 32px;
+		letter-spacing: 1.5px;
+		font-weight: 550;
+		padding-bottom: 10px;
+	}
+	.banner p{
+		font-size: 11px;
+		letter-spacing: 1px;
+		padding-bottom: 1.3rem;
+		max-width: 600;
+		font-weight: 400;
+	}
+	.banner span{
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 520;
+	}
+	.banner button{
+		width: 9rem;
+		padding: 10px 10px;
+		margin-bottom: 1rem;
+	}
+	.banner button a{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	#capture h2{
+		font-size:20px;
+		max-width: 600;
+		letter-spacing: 1px;
+		font-weight: 520;
+		margin-bottom:2rem;
+	}
+	.capture-content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		scroll-behavior: smooth;
+		padding: 20px;
+	}
+	.card{
+		width: 100%;
+		margin-bottom: 2rem;
+		position: relative;
+	}
+	.card .content h1{
+		font-size: 25px;
+		letter-spacing: 1px;
+		font-weight: 600;
+	}
+	.card .content p{
+		font-size: 15px;
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
+	.pricing{
+		width: 100%;
+		flex-grow: 1;
+		padding: 15px;
+	}
+	.price-card{
+		width: 95%;
+		margin: auto;
+		padding: 15px;
+		align-items: flex-start;
+	}
+	.pop{
+		font-size: 12px;
+		letter-spacing: 2px;
+		font-weight: 400;
+		padding: 13px 10px;
+		margin-top: 3px;
+		border-radius: 20px;
+	}
+	.price-card h1{
+		font-size: 18px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 10px;
+		padding-top: 15px;
+	}
+	.price-card h2{
+		font-size: 25px;
+		letter-spacing: 2px;
+		font-weight: 530;
+		padding-bottom: 2px;
+	}
+	.price-card bold{
+		font-weight: 500;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+	.price-card h5{
+		font-size: 13px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 10px;
+	}
+	.price-card p{
+		font-size: 13px;
+		letter-spacing: 1px;
+		font-weight: 400;;
+		padding-bottom: 15px;
+	}
+	.price-card ul li{
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 350;
+		padding-bottom: 8px;
+	}
+	.price-card button{
+		width: 100%;
+		margin-top: 1.2rem;
+		border-radius: 30px;
+		padding: 12px 10px;
+		margin-bottom: 1rem;
+	}
+	.price-card button a{
+		font-size: 13px;
+		letter-spacing: 2px;
+		font-weight: 500;
+	}
+	.services h3{
+		font-weight: 500;
+		letter-spacing: 1px;
+		font-size: 18px;
+		margin-bottom: 2rem;
+	}
+	.accordion:after {
+	  font-size: 10px;
+	  font-weight: 300;
+	  margin-left: 0px;
+	}
+	#contact{
+		width: 100%;
+		padding:30px 10px 30px 10px;
+	}
+	form{
+		width:95%;
+		padding: 5;
+		margin-bottom: 2.5rem;
+		border-radius: 5px;
+	}
+	form input, textarea{
+		font-size: 12px;
+	}
+	form ::placeholder{
+		letter-spacing: 1px;
+		font-size: 12px;
+	}
+	form textarea ::input{
+		letter-spacing: 1px;
+		font-size: 12px;
+	}
+	form .send{
+		column-gap: 30px;
+	}
+	.send strong{
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+	.sub-btn{
+		width: 8rem;
+		padding: 8px 8px;
+		font-weight: 400;
+		font-size: 12px;
+		letter-spacing: 1px;
+		border-radius: 5px;
+	}
+
+	.info{
+		width: 95%;
+		text-align: center;
+		align-items: flex-start;
+	}
+	.info h2{
+		font-size: 23px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 10px;
+	}
+	.info p{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+		padding-bottom: 20px;
+	}
+	.socials a i{
+		font-size: 23px;
+		width: 16px;
+		height: 16px;
+		padding: 8px 25px;
+	}
+	.info h4{
+		padding-top: 18px;
+		font-weight: 500;
+		letter-spacing: 2px;
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+	.email{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	footer{
+		width: 100%;
+		padding: 27px;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
+	.gotopbr i{
+		width: 45px;
+		height: 45px;
+		bottom: 30px;
+		right: 8px;
+		line-height: 45px;
+		font-size: 18px;
+		z-index: 5;
+	}
+}
+
+@media screen and (max-width:645px) and (min-width:513px){
+	header{
+		width: 100%;
+		min-height: 100vh;
+		padding: 10px;
+		background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.560),
+	rgb(0, 0, 0)),url(images/bg-1.jpg);
+	}
+	.banner{
+		width: 100%;
+		margin: auto;
+		padding: 10px;
+		backdrop-filter: blur(1px);
+	}
+	.banner h1{
+		font-size: 25px;
+		letter-spacing: 1px;
+		font-weight: 520;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.banner p{
+		font-size: 11px;
+		letter-spacing: 1px;
+		padding-bottom: 1.3rem;
+		max-width: 500;
+		font-weight: 420;
+	}
+	.banner span{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 550;
+	}
+	.banner button{
+		width: 9rem;
+		padding: 8px 10px;
+		margin-bottom: 1rem;
+	}
+	.banner button a{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	#gallery{
+		width: 100%;
+		padding: 10px;
+	}
+	.slider{
+		height: 350px;
+		margin: auto;
+		position: relative;
+		width: 95%;
+		display: grid;
+		padding: 15px;
+		margin-bottom: 50px;
+	}
+	.slide-track{
+		display: flex;
+		width: calc(250px * 18);
+		animation: scroll 40s linear infinite;
+	}
+	@keyframes scroll{
+		0%{
+			transform: translateX(0);
 		}
-		.details h1{
-				font-size: 35px;
-				letter-spacing: 1px;
-				font-weight: 650;
-				padding-top: 10px;
-				padding-bottom: 10px;
-			}
-			.details p{
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				padding-bottom: 1rem;
-			}
-			.details span{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.details button{
-				width: 9rem;
-				padding: 7px 10px;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				border-radius: 20px;
-				cursor: pointer;
-			}
-			.details button a{
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 500;
-			}
-			#capture h2{
-				text-align: center;
-				font-size: 23px;
-				letter-spacing: 1px;
-				font-weight: 620;
-				padding-top: 20px;
-				margin-bottom:2rem;
-			}
-		.capture-content{
-				display: flex;
-				gap: 25px;
-				scroll-behavior: smooth;
-				width: 95%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 20px;
-				background: #ddd;
-			}
-			.card{
-				width: 600px;
-				aspect-ratio: 1 / 1.2;
-				border-radius: 16px;
-				overflow: hidden;
-				position: relative;
-				background: green;
-				cursor: pointer;
-			}
+		100%{
+			transform: translateX(calc(-250px * 9));
+		}
+	}
+	.slide{
+		height: 230px;
+		width: 250px;
+	}
+	#capture h2{
+		font-size:18px;
+		max-width: 550;
+		letter-spacing: 1px;
+		font-weight: 500;
+		margin-bottom:2rem;
+	}
+	.card .content h1{
+		font-size: 20px;
+		letter-spacing: 1px;
+		font-weight: 520;
+	}
+	.card .content p{
+		font-size: 13px;
+		font-weight: 420;
+		letter-spacing: 1px;
+	}
+	.pricing{
+		width: 100%;
+		flex-grow: 1;
+		padding: 15px;
+	}
+	.price-card{
+		width: 100%;
+		margin: auto;
+		padding: 10px;
+		align-items: flex-start;
+	}
+	.services h3{
+		font-weight: 500;
+		letter-spacing: 1px;
+		font-size: 16px;
+		margin-bottom: 1rem;
+	}
+	form{
+		width:100%;
+		padding: 5;
+		margin-bottom: 2.5rem;
+		border-radius: 5px;
+	}
+	.info{
+		width: 100%;
+		text-align: center;
+		align-items: flex-start;
+	}
+	footer{
+		width: 100%;
+		padding: 27px;
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
+	.gotopbr i{
+		width: 43px;
+		height: 43px;
+		bottom: 30px;
+		right: 5px;
+		line-height: 43px;
+		font-size: 17px;
+		z-index: 5;
+	}
+}
 
-		.pricing{
-				width: 100%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 10px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-			}
-		.price-card{
-				width: 50%;
-				padding: 10px;
-				border-radius: 5px;
-				background: transparent;
-				border:.1px solid grey;
-				margin-bottom: 2.5rem;
-				box-shadow: 0 0 1px 1px white;
-			}
-			.services{
-				width: 100%;
-				padding-top: 20px;
-			}
-			.services h3{
-				text-align: center;
-				font-weight: 620;
-				letter-spacing: 1px;
-				font-size: 20px;
-				margin-bottom: 2rem;
-			}
-			.accordion {
-				padding: 16px;
-				width: 100%;
-				font-size: 14px;
-				font-weight: 400;
-			}
-			.panel {
-			  padding: 23px;
-			  font-size:13px;
-			  letter-spacing: 1px;
-			  font-weight: 400;
-			  max-height: 0;
-			}
-			.contact-form{
-				width: 97%;
-				margin: auto;
-				padding: 10x;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				flex-direction: column;
-			}
-			form{
-				width: 80%;
-				margin-bottom: 2rem;
-				padding: 10px;
-				border-radius: 5px;
-				border: 1px solid white;
-				background: transparent;
-			}
-			form .first{
-				margin-right: 10px;
-			}
-			form input{
-				width: 16rem;
-				padding: 7px 10px;
-				outline: none;
-				color: white;
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				border: 1px solid white;
-				background-color: transparent;
-			}
-			form textarea{
-				width: 90%;
-				margin: auto;
-				display: block;
-				background: transparent;
-				border: 1px solid white;
-				padding: 7px 10px;
-				color: white;
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				margin-bottom: 1.5rem;
-			}
-			.send strong{
-				font-weight: 400;
-				letter-spacing: 1px;
-				color: whitesmoke;
-				font-size: 11px;
-			}
-			.sub-btn{
-				width: 7rem;
-				padding: 7px 10px;
-				outline: none;
-				border: none;
-				background: royalblue;
-				color: white;
-				font-weight: 600;
-				letter-spacing: 1px;
-				cursor: pointer;
-				border-radius: 5px;
-			}
-			.info{
-				width: 60%;
-				padding: 10px;
-				text-align: center;
-				display: block;
-			}
-			.info h2{
-				font-size: 20px;
-				letter-spacing: 1px;
-				font-weight: 500;
-				padding-bottom: 10px;
-			}
-			.info p{
-				font-size: 10px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 400;
-				padding-bottom: 20px;
-			}
-			.socials a i{
-				display: inline-flex;
-				font-size: 20px;
-				width: 15px;
-				height: 15px;
-				padding: 5px 25px;
-			}
-			.info h4{
-				padding-top: 20px;
-				font-weight: 500;
-				letter-spacing: 1px;
-				font-size: 17px;
-				margin-bottom: 10px;
-			}
-			.email{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.gotopbr i{
-				position: fixed;
-				width: 50px;
-				height: 50px;
-				bottom: 40px;
-				right: 10px;
-				line-height: 50px;
-				font-size: 20px;
-			}
-			footer p{
-				font-size: 13px;
-				letter-spacing: 1px;
-			}		
-}
-/*@media only screen and (max-width:712px){
-		.container{
-				width: 100%;
-				padding-top: 100px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 60vh;
-			}
-}*/
-@media only screen and (max-width:638px){
-		.container{
-				width: 100%;
-				padding-top: 100px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 85vh;
-			}
+@media screen and (max-width:512px){
+	header{
+		width: 100%;
+		min-height: 100vh;
+		padding: 10px;
+		background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.560),
+	rgb(0, 0, 0)),url(images/bg-1.jpg);
+	}
+	.banner{
+		width: 100%;
+		margin: auto;
+		padding: 10px;
+	}
+	.banner h1{
+		font-size: 25px;
+		letter-spacing: 1px;
+		font-weight: 520;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.banner p{
+		font-size: 11px;
+		letter-spacing: 1px;
+		padding-bottom: 1.3rem;
+		max-width: 500;
+		font-weight: 400;
+	}
+	.banner span{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 500;
+	}
+	.banner button{
+		width: 9rem;
+		padding: 8px 9px;
+		margin-bottom: 1rem;
+	}
+	.banner button a{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	#gallery{
+		width: 100%;
+		padding: 10px;
+	}
+	.slider{
+		height: 330px;
+		margin: auto;
+		position: relative;
+		width: 93%;
+		display: grid;
+		padding: 10px;
+		margin-bottom: 50px;
+	}
+	.slide-track{
+		display: flex;
+		width: calc(250px * 16);
+		animation: scroll 40s linear infinite;
+	}
+	@keyframes scroll{
+		0%{
+			transform: translateX(0);
+		}
+		100%{
+			transform: translateX(calc(-250px * 8));
+		}
+	}
+	.slide{
+		height: 230px;
+		width: 250px;
+	}
+	.capture-content{
+		scroll-behavior: smooth;
+		padding: 10px;
+	}
+	.card{
+		width: 100%;
+		margin-bottom: 1.5rem;
+		position: relative;
+	}
+	#capture h2{
+		font-size:17px;
+		max-width: 500;
+		letter-spacing: .1px;
+		font-weight: 520;
+		margin-bottom:1.6rem;
+	}
+	.capture-content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		scroll-behavior: smooth;
+		padding: 15px;
+	}
+	.card{
+		width: 100%;
+		margin-bottom: 1rem;
+		position: relative;
+	}
+	.card .content h1{
+		font-size: 18px;
+		letter-spacing: 1px;
+		font-weight: 500;
+	}
+	.card .content p{
+		font-size: 12px;
+		font-weight: 420;
+		letter-spacing: 1px;
+	}
+	.pricing{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		flex-grow: 1;
+		padding: 15px;
+	}
+	#price h3{
+		font-size: 17px;
+		letter-spacing: 1px;
+		font-weight: 520;
+		margin-bottom: 1.5rem;
+	}
+	.price-card{
+		width: 100%;
+		margin: auto;
+		padding: 10px;
+		align-items: flex-start;
+	}
+	#mid-card{
+		margin-block: 2rem;
+	}
+	.pop{
+		font-size: 11px;
+		letter-spacing: 1.5px;
+		font-weight: 400;
+		padding: 10px 10px;
+		margin-top: 3px;
+	}
+	.price-card h1{
+		font-size: 15px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 10px;
+		padding-top: 16px;
+	}
+	.price-card h2{
+		font-size: 23px;
+		letter-spacing: 1.5px;
+		font-weight: 500;
+		padding-bottom: 2px;
+	}
+	.price-card bold{
+		font-weight: 500;
+		font-size: 11px;
+		letter-spacing: 1px;
+	}
+	.price-card h5{
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 10px;
+	}
+	.price-card p{
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 400;;
+		padding-bottom: 15px;
+	}
+	.price-card ul li{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 350;
+		padding-bottom: 10px;
+	}
+	.price-card button{
+		width: 100%;
+		margin-top: 1.2rem;
+		border-radius: 30px;
+		padding: 12px 10px;
+		box-shadow: none;
+		margin-bottom: 1rem;
+	}
+	.price-card button a{
+		font-size: 12px;
+		letter-spacing: 2px;
+		font-weight: 500;
+	}
 
-		.details h1{
-				font-size: 35px;
-				letter-spacing: 1px;
-				font-weight: 650;
-				padding-top: 10px;
-				padding-bottom: 10px;
-			}
-			.details p{
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				padding-bottom: 1rem;
-			}
-			.details span{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.details button{
-				width: 9rem;
-				padding: 7px 10px;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				border-radius: 20px;
-				cursor: pointer;
-			}
-			.details button a{
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 500;
-			}
-			/*////////////////////////*/
-			#gallery{
-					width: 100%;
-					padding: 10px;
-					padding-top: 1.5rem;
-				}
-				.gallery-slider{
-					padding-top: 20px;
-				}
-			.slider{
-				height: 250px;
-				width: 90%;
-				display: grid;
-				padding: 15px;
-				margin-bottom: 50px;
-			}
-			#capture h2{
-				font-size: 20px;
-				letter-spacing: 0;
-				font-weight: 620;
-				padding-top: 20px;
-				margin-bottom:2rem;
-			}
-		.capture-content{
-				display: flex;
-				gap: 10px;
-				width: 100%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 13px;
-			}
-			.card{
-				width: 670px;
-				aspect-ratio: 1 / 1.1;
-				border-radius: 15px;
-			}
-			.card .content h1{
-				color: white;
-				font-size: 13px;
-				letter-spacing: 0;
-				font-weight: 550;
-				padding-bottom: 7px;
-			}
-			.card .content p{
-				color: white;
-				font-size: 11px;
-				color: white;
-				font-weight: 400;
-				letter-spacing: 0;
-			}
-			#price h3{
-				text-align: center;
-				font-size: 20px;
-				letter-spacing: 1px;
-				font-weight: 600;
-				margin-bottom: 2rem;
-			}
-		.pricing{
-				width: 100%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 10px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-			}
-		.price-card{
-				width: 60%;
-				padding: 10px;
-				border-radius: 5px;
-				background: transparent;
-				border:.1px solid grey;
-				margin-bottom: 2.5rem;
-				box-shadow: 0 0 1px 1px white;
-			}
-			.pop{
-				color: yellow;
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.price-card h1{
-				font-size: 18px;
-				letter-spacing: 0;
-				font-weight: 500;
-				padding-top: 10px;
-				padding-bottom: 15px;
-				padding-left: 10px;
-			}
-			.price-card h2{
-				font-size: 20px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 500;;
-				padding-bottom: 5px;
-				padding-left: 10px;
-			}
-			.price-card bold{
-				font-weight: 450;
-			}
-			.price-card h5{
-				font-size: 13px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 450;;
-				padding-bottom: 10px;
-				padding-left: 10px;
-			}
-			.price-card p{
-				font-size: 12px;
-				letter-spacing: 1px;
-				padding-left: 10px;
-				color: white;
-				font-weight: 400;;
-				padding-bottom: 20px;
-			}
-			.price-card ul li{
-				list-style: none;
-				font-size: 13px;
-				padding-left: 10px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 350;
-				padding-bottom: 5px;
-			}
-			.services{
-				width: 100%;
-				padding-top: 20px;
-			}
-			.services h3{
-				text-align: center;
-				font-weight: 620;
-				letter-spacing: 1px;
-				font-size: 20px;
-				margin-bottom: 2rem;
-			}
-			.accordion {
-				padding: 16px;
-				width: 100%;
-				font-size: 12px;
-				font-weight: 400;
-			}
-			.panel {
-			  padding: 23px;
-			  font-size:12px;
-			  letter-spacing: 1px;
-			  font-weight: 400;
-			  max-height: 0;
-			}
-			#contact{
-				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
-				rgb(0, 0, 0)),url(images/bg-3.jpg);
-			}
-			.contact-form{
-				width: 97%;
-				margin: auto;
-				padding: 10x;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				flex-direction: column;
-			}
-			form{
-				width: 85%;
-				margin-bottom: 2rem;
-				padding: 10px;
-				border-radius: 5px;
-				border: 1px solid white;
-				background: transparent;
-			}
-			form .footer-names{
-				display: block;
-				padding-top: 20px;
-				padding-bottom: 10px;
-				width: 90%;
-				margin: auto;
-				justify-content: center;
-				align-items: center;
-			}
-			form .first{
-				margin-right: 0;
-			}
-			form input{
-				width: 100%;
-				margin-bottom: 1rem;
-				padding: 9px 10px;
-				outline: none;
-				color: white;
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				border: 1px solid white;
-				background-color: transparent;
-			}
-			form textarea{
-				width: 90%;
-				margin: auto;
-				display: block;
-				background: transparent;
-				border: 1px solid white;
-				padding: 7px 10px;
-				color: white;
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				margin-bottom: 1.5rem;
-			}
-			.send strong{
-				font-weight: 400;
-				letter-spacing: 1px;
-				color: whitesmoke;
-				font-size: 11px;
-			}
-			.sub-btn{
-				width: 7rem;
-				padding: 7px 10px;
-				outline: none;
-				border: none;
-				background: royalblue;
-				color: white;
-				font-weight: 600;
-				letter-spacing: 1px;
-				cursor: pointer;
-				border-radius: 5px;
-			}
-			.info{
-				width: 60%;
-				padding: 10px;
-				text-align: center;
-				display: block;
-			}
-			.info h2{
-				font-size: 20px;
-				letter-spacing: 1px;
-				font-weight: 500;
-				padding-bottom: 10px;
-			}
-			.info p{
-				font-size: 10px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 400;
-				padding-bottom: 20px;
-			}
-			.socials a i{
-				display: inline-flex;
-				font-size: 20px;
-				width: 15px;
-				height: 15px;
-				padding: 5px 25px;
-			}
-			.info h4{
-				padding-top: 20px;
-				font-weight: 500;
-				letter-spacing: 1px;
-				font-size: 17px;
-				margin-bottom: 10px;
-			}
-			.email{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.gotopbr i{
-				position: fixed;
-				width: 40px;
-				height: 40px;
-				bottom: 40px;
-				right: 10px;
-				line-height: 40px;
-				font-size: 20px;
-			}
-			footer p{
-				font-size: 12px;
-				letter-spacing: 1px;
-			}		
+	.services{
+		width: 100%;
+		padding-top: 12px;
+	}
+	.services h3{
+		font-weight: 400;
+		letter-spacing: 1px;
+		font-size: 13px;
+		margin-bottom: 1rem;
+	}
+	.accordion {
+		padding: 18px;
+		width: 100%;
+		font-size: 10px;
+		font-weight: 400;
+	}
+	.panel {
+	  padding: 20px;
+	  font-size:10px;
+	  letter-spacing: .1px;
+	  font-weight: 400;
+	  max-height: 0;
+	  line-height: 18px;
+	}
+	.accordion:after {
+	  font-size: 10px;
+	  font-weight: 300;
+	  margin-left: 0px;
+	}
+	#contact{
+		width: 100%;
+		padding:20px 10px 20px 10px;
+	}
+	.contact-form{
+		padding: 5px;
+	}
+	form{
+		width:100%;
+		padding: 12px;
+		margin-bottom: 2rem;
+		border-radius: 5px;
+	}
+	form .footernames{
+		display: flex;
+		flex-direction: column;
+		column-gap:0px;
+	}
+	form input{
+		width: 100%;
+		padding: 12px 10px;
+		margin: auto;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+	form textarea{
+		width: 100%;
+		margin-top: 1rem;
+		border: 1px solid white;
+		font-size: 12px;
+		padding: 10px 10px;
+		lett3r-spacing: 1px;
+		margin-bottom: 1.5rem;
+	}
+	form .first{
+		margin-bottom: 1.2rem;
+	}
+	form .send{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 0px;
+	}
+	.send strong{
+		font-size: 11px;
+		font-weight: 400;
+		padding-bottom: 12px;
+		letter-spacing: 1px;
+	}
+	.sub-btn{
+		width: 12rem;
+		padding: 10px 10px;
+		font-weight: 500;
+		font-size: 13px;
+		letter-spacing: 1px;
+		border-radius: 5px;
+		margin-bottom: 12px;
+	}
+	.info{
+		width: 100%;
+		text-align: center;
+		align-items: flex-start;
+	}
+	.info h2{
+		font-size: 18px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 10px;
+	}
+	.info p{
+		font-size: 10px;
+		letter-spacing: 1px;
+		font-weight: 400;
+		padding-bottom: 20px;
+	}
+	.socials a i{
+		font-size: 22px;
+		width: 15px;
+		height: 15px;
+		padding: 8px 23px;
+	}
+	.info h4{
+		padding-top: 18px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+	.email{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	footer{
+		width: 100%;
+		padding: 27px;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
+	.gotopbr i{
+		width: 43px;
+		height: 43px;
+		bottom: 30px;
+		right: 3px;
+		line-height: 43px;
+		font-size: 17px;
+		z-index: 5;
+	}
 }
-@media only screen and (max-width:530px){
-		.container{
-				width: 100%;
-				padding-top: 100px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 85vh;
-			}
-		.details h1{
-				font-size: 30px;
-				letter-spacing: 1.5px;
-				font-weight: 630;
-				padding-top: 10px;
-				padding-bottom: 10px;
-			}
-			.details p{
-				font-size: 10px;
-				width: 70%;
-				margin: auto;
-				text-align: center;
-				letter-spacing: 1px;
-				font-weight: 400;
-				padding-bottom: 1rem;
-			}
-			.details span{
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.details button{
-				width: 8rem;
-				padding: 6px 9px;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				border-radius: 20px;
-				cursor: pointer;
-			}
-			.details button a{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 500;
-			}
-			/*////////////////////////*/
-			#gallery{
-					width: 100%;
-					padding: 10px;
-					padding-top: 1.5rem;
-				}
-				.gallery-slider{
-					padding-top: 20px;
-				}
-			.slider{
-				height: 250px;
-				width: 90%;
-				display: grid;
-				padding: 10px;
-				margin-bottom: 50px;
-			}
-			#capture h2{
-				font-size: 15px;
-				letter-spacing: 0;
-				font-weight: 620;
-				padding-top: 20px;
-				margin-bottom:1rem;
-			}
-		.capture-content{
-				display: flex;
-				gap: 10px;
-				width: 97%;
-				margin: auto;
-				flex-direction: column;
-				justify-content: center;
-				flex-grow: 1;
-				padding: 10px;
-			}
-			.card{
-				width: 350px;
-				margin: auto;
-				margin-bottom: 1rem;
-				aspect-ratio: 1 / 1.1;
-				border-radius: 15px;
-			}
-			.card > img{
-				width: 100%;
-				height: 100%;
-			}
-			.card > .content{
-				height: 40%;
-				background: #100c20;
-				padding: 1.2rem;
-			}
-			.card .content h1{
-				color: white;
-				font-size: 16px;
-				letter-spacing: 0;
-				font-weight: 600;
-				padding-bottom: 7px;
-			}
-			.card .content p{
-				color: white;
-				font-size: 12px;
-				color: white;
-				font-weight: 420;
-				letter-spacing: 0;
-			}
-			#price h3{
-				text-align: center;
-				font-size: 18px;
-				letter-spacing: 1px;
-				font-weight: 550;
-				margin-bottom: 2rem;
-			}
-		.pricing{
-				width: 100%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 10px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-			}
-		.price-card{
-				width: 70%;
-				padding: 10px;
-				border-radius: 5px;
-				background: transparent;
-				border:.1px solid grey;
-				margin-bottom: 2.5rem;
-				box-shadow: 0 0 1px 1px white;
-			}
-			.pop{
-				color: yellow;
-				font-size: 10px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.price-card h1{
-				font-size: 15px;
-				letter-spacing: 0;
-				font-weight: 500;
-				padding-top: 10px;
-				padding-bottom: 13px;
-				padding-left: 10px;
-			}
-			.price-card h2{
-				font-size: 18px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 500;;
-				padding-bottom: 5px;
-				padding-left: 10px;
-			}
-			.price-card bold{
-				font-weight: 430;
-			}
-			.price-card h5{
-				font-size: 12px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 450;;
-				padding-bottom: 10px;
-				padding-left: 10px;
-			}
-			.price-card p{
-				font-size: 10px;
-				letter-spacing: 1px;
-				padding-left: 10px;
-				color: white;
-				font-weight: 400;;
-				padding-bottom: 20px;
-			}
-			.price-card ul li{
-				list-style: none;
-				font-size: 11px;
-				padding-left: 10px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 350;
-				padding-bottom: 5px;
-			}
-			.price-card button{
-				width: 97%;
-				margin:auto;
-				margin-top: 1.5rem;
-				padding: 8px 10px;
-				box-shadow: 0 1px white;
-				margin-bottom: 15px;
-			}
-			.price-card button a{
-				font-size: 14px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.services{
-				width: 100%;
-				padding-top: 10px;
-			}
-			.services h3{
-				text-align: center;
-				font-weight: 620;
-				letter-spacing: 1px;
-				font-size: 20px;
-				margin-bottom: 1rem;
-			}
-			.accordion {
-				padding: 16px;
-				width: 100%;
-				font-size: 12px;
-				font-weight: 400;
-			}
-			.panel {
-			  padding: 23px;
-			  font-size:10px;
-			  letter-spacing: 1px;
-			  font-weight: 400;
-			  max-height: 0;
-			}
-			#contact{
-				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
-				rgb(0, 0, 0)),url(images/bg-3.jpg);
-			}
-			.contact-form{
-				width: 97%;
-				margin: auto;
-				padding: 10x;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				flex-direction: column;
-			}
-			form{
-				width: 80%;
-				margin-bottom: 2rem;
-				padding: 10px;
-				border-radius: 5px;
-				border: 1px solid white;
-				background: transparent;
-			}
-			form .footer-names{
-				display: block;
-				padding-top: 20px;
-				padding-bottom: 10px;
-				width: 90%;
-				margin: auto;
-				justify-content: center;
-				align-items: center;
-			}
-			form .first{
-				margin-right: 0;
-			}
-			form input{
-				width: 100%;
-				margin-bottom: 1rem;
-				padding: 9px 10px;
-				outline: none;
-				color: white;
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				border: 1px solid white;
-				background-color: transparent;
-			}
-			form textarea{
-				width: 90%;
-				margin: auto;
-				display: block;
-				background: transparent;
-				border: 1px solid white;
-				padding: 7px 10px;
-				color: white;
-				font-size: 13px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				margin-bottom: 1.5rem;
-			}
-			form .send{
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-				align-items: center;
-				margin-bottom: 10px;
-			}
-			.send strong{
-				font-weight: 400;
-				letter-spacing: 1px;
-				color: whitesmoke;
-				padding-bottom: 15px;
-				font-size: 11px;
-			}
-			.sub-btn{
-				width: 15rem;
-				padding: 7px 10px;
-				outline: none;
-				border: none;
-				background: royalblue;
-				color: white;
-				font-weight: 600;
-				letter-spacing: 1px;
-				cursor: pointer;
-				border-radius: 5px;
-			}
-			.info{
-				width: 60%;
-				padding: 10px;
-				text-align: center;
-				display: block;
-			}
-			.info h2{
-				font-size: 20px;
-				letter-spacing: 1px;
-				font-weight: 500;
-				padding-bottom: 10px;
-			}
-			.info p{
-				font-size: 10px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 400;
-				padding-bottom: 20px;
-			}
-			.socials a i{
-				display: inline-flex;
-				font-size: 20px;
-				width: 15px;
-				height: 15px;
-				padding: 5px 25px;
-			}
-			.info h4{
-				padding-top: 20px;
-				font-weight: 500;
-				letter-spacing: 1px;
-				font-size: 17px;
-				margin-bottom: 10px;
-			}
-			.email{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.gotopbr i{
-				position: fixed;
-				width: 40px;
-				height: 40px;
-				bottom: 40px;
-				right: 10px;
-				line-height: 40px;
-				font-size: 20px;
-			}
-			footer p{
-				font-size: 12px;
-				letter-spacing: 1px;
-			}		
+
+@media screen and (max-width:425px){
+	header{
+		width: 100%;
+		min-height: 100vh;
+		padding: 10px;
+		background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.570),
+	rgb(0, 0, 0)),url(images/bg-1.jpg);
+	}
+	.banner{
+		width: 100%;
+		padding: 10px;
+		backdrop-filter: blur(1px);
+	}
+	.banner h1{
+		font-size: 25px;
+		letter-spacing: 1.2px;
+		font-weight: 520;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.banner p{
+		font-size: 10px;
+		letter-spacing: 1px;
+		padding-bottom: 1.3rem;
+		max-width: 500;
+		font-weight: 400;
+	}
+	.banner span{
+		font-size: 10px;
+		letter-spacing: 1px;
+		font-weight: 500;
+	}
+	.banner button{
+		width: 8rem;
+		padding: 8px 8px;
+		margin-bottom: 1rem;
+	}
+	.banner button a{
+		font-size: 10px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	#gallery{
+		width: 100%;
+		padding: 12px;
+	}
+	.slider{
+		height: 300px;
+		margin: auto;
+		position: relative;
+		width: 93%;
+		display: grid;
+		padding: 10px;
+		margin-bottom: 20px;
+	}
+	.card{
+		width: 100%;
+		margin-bottom: 1rem;
+		position: relative;
+	}
+	#capture h2{
+		font-size:15px;
+		max-width: 500;
+		letter-spacing: .1px;
+		font-weight: 420;
+		margin-bottom:1.5rem;
+	}
+	.card .content h1{
+		font-size: 16px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 5px;
+	}
+	.card .content p{
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+	#price h3{
+		font-size: 15px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		margin-bottom: 1.5rem;
+	}
+	.price-card{
+		width: 100%;
+		margin: auto;
+		padding: 10px;
+		align-items: flex-start;
+	}
+	#mid-card{
+		margin-block: 2rem;
+	}
+	.pop{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+		padding: 10px 10px;
+		margin-top: 3px;
+	}
+	.price-card h1{
+		font-size: 13px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 10px;
+		padding-top: 16px;
+	}
+	.price-card h2{
+		font-size: 21px;
+		letter-spacing: 1.3px;
+		font-weight: 500;
+		padding-bottom: 3px;
+	}
+	.price-card bold{
+		font-weight: 420;
+		font-size: 10px;
+		letter-spacing: 1px;
+	}
+	.price-card h5{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 420;
+		padding-bottom: 10px;
+	}
+	.price-card p{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;;
+		padding-bottom: 15px;
+	}
+	.price-card ul li{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+		padding-bottom: 10px;
+	}
+	.price-card button{
+		width: 100%;
+		margin-top: 1.2rem;
+		border-radius: 30px;
+		padding: 11px 10px;
+		box-shadow: none;
+		margin-bottom: 1rem;
+	}
+	.price-card button a{
+		font-size: 11px;
+		letter-spacing: 1.5px;
+		font-weight: 500;
+	}
+
+	.services{
+		width: 100%;
+		padding-top: 13px;
+	}
+	.services h3{
+		font-weight: 400;
+		letter-spacing: 1px;
+		font-size: 12px;
+		margin-bottom: 1rem;
+	}
+
+	#contact{
+		width: 100%;
+		padding:25px 10px 20px 10px;
+	}
+	form{
+		width:100%;
+		padding: 10px;
+		margin-bottom: 2rem;
+		border-radius: 5px;
+	}
+	form input{
+		width: 100%;
+		padding: 11px 10px;
+		margin: auto;
+		font-size: 11px;
+		letter-spacing: 1px;
+		border-radius: 3px;
+	}
+	form textarea{
+		width: 100%;
+		margin-top: 1rem;
+		font-size: 11px;
+		padding: 10px;
+		letter-spacing: 1px;
+		margin-bottom: 1.5rem;
+		border-radius: 3px;
+	}
+	form ::placeholder{
+		letter-spacing: 1px;
+		font-size: 11px;
+	}
+	form textarea ::input{
+		letter-spacing: 1px;
+		font-size: 11px;
+	}
+	.send strong{
+		font-size: 10px;
+		font-weight: 400;
+		padding-bottom: 13px;
+		letter-spacing: 1px;
+	}
+	.sub-btn{
+		width: 12rem;
+		padding: 10px 10px;
+		font-weight: 500;
+		font-size: 13px;
+		letter-spacing: 1px;
+		margin-bottom: 12px;
+	}
+	.info p{
+		font-size: 10px;
+		letter-spacing: 1px;
+		font-weight: 400;
+		padding-bottom: 20px;
+	}
+	.socials a i{
+		font-size: 20px;
+		width: 14px;
+		height: 14px;
+		padding: 8px 21px;
+	}
+	.info h4{
+		padding-top: 18px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		font-size: 13px;
+		margin-bottom: 5px;
+	}
+	.email{
+		font-size: 10px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
 }
-@media only screen and (max-width:425px){
-		.container{
-				width: 100%;
-				padding-top: 80px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 75vh;
-			}
-		.details h1{
-				font-size: 25px;
-				letter-spacing: 1.3px;
-				font-weight: 630;
-				padding-top: 10px;
-				padding-bottom: 10px;
-			}
-			.details p{
-				font-size: 10px;
-				width: 75%;
-				margin: auto;
-				padding-top: 10px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				padding-bottom: 1rem;
-			}
-			.details span{
-				font-size: 10px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.details button{
-				width: 8rem;
-				padding: 6px 9px;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				border-radius: 20px;
-				cursor: pointer;
-			}
-			.details button a{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 500;
-			}
-			/*////////////////////////*/
-			#gallery{
-					width: 100%;
-					padding: 10px;
-					padding-top: 1.5rem;
-				}
-				.gallery-slider{
-					padding-top: 20px;
-				}
-			.slider{
-				height: 230px;
-				width: 90%;
-				display: grid;
-				padding: 10px;
-				margin-bottom: 40px;
-			}
-			#capture h2{
-				font-size: 12px;
-				letter-spacing: 0;
-				font-weight: 620;
-				padding-top: 20px;
-				margin-bottom:1rem;
-			}
-		.capture-content{
-				display: flex;
-				gap: 10px;
-				width: 97%;
-				margin: auto;
-				flex-direction: column;
-				justify-content: center;
-				flex-grow: 1;
-				padding: 10px;
-			}
-			.card{
-				width: 310px;
-				margin: auto;
-				margin-bottom: 1rem;
-				aspect-ratio: 1 / 1.1;
-				border-radius: 15px;
-			}
-			.card > img{
-				width: 100%;
-				height: 100%;
-			}
-			.card > .content{
-				height: 40%;
-				background: #100c20;
-				padding: 1.2rem;
-			}
-			.card .content h1{
-				color: white;
-				font-size: 16px;
-				letter-spacing: 0;
-				font-weight: 600;
-				padding-bottom: 7px;
-			}
-			.card .content p{
-				color: white;
-				font-size: 12px;
-				color: white;
-				font-weight: 420;
-				letter-spacing: 0;
-			}
-			#price{
-				padding-top: 10px;
-			}
-			#price h3{
-				text-align: center;
-				font-size: 18px;
-				letter-spacing: 1px;
-				font-weight: 550;
-				margin-bottom: 1.5rem;
-			}
-			#mid-card{
-				border-left: 1px solid orange;
-				border-right: 1px solid red;
-				box-shadow: 0 0 2px 3px orangered;
-				z-index: 5;
-			}
-		.pricing{
-				width: 100%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 5px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-			}
-		.price-card{
-				width: 73%;
-				padding: 10px;
-				border-radius: 5px;
-				background: transparent;
-				border:.1px solid grey;
-				margin-bottom: 2.5rem;
-				box-shadow: 0 0 1px 1px white;
-			}
-			.pop{
-				color: yellow;
-				font-size: 10px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.price-card h1{
-				font-size: 13px;
-				letter-spacing: 0;
-				font-weight: 500;
-				padding-top: 10px;
-				padding-bottom: 15px;
-				padding-left: 0;
-			}
-			.price-card h2{
-				font-size: 16px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 500;;
-				padding-bottom: 7px;
-				padding-left: 0;
-			}
-			.price-card bold{
-				font-weight: 400;
-				padding-left: 0;
-				font-size: 11px;
-			}
-			.price-card h5{
-				font-size: 11px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 450;;
-				padding-bottom: 10px;
-				padding-left: 0;
-			}
-			.price-card p{
-				font-size: 10px;
-				letter-spacing: 1px;
-				padding-left: 0;
-				color: white;
-				font-weight: 400;;
-				padding-bottom: 20px;
-			}
-			.price-card ul li{
-				list-style: none;
-				font-size: 10px;
-				padding-left: 0;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 350;
-				padding-bottom: 5px;
-			}
-			.price-card button{
-				width: 97%;
-				margin:auto;
-				margin-top: 1.5rem;
-				padding: 7px 10px;
-				box-shadow: 0 1px white;
-				margin-bottom: 15px;
-			}
-			.price-card button a{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.services{
-				width: 100%;
-				padding-top: 10px;
-			}
-			.services h3{
-				text-align: center;
-				font-weight: 620;
-				letter-spacing: 0;
-				font-size:15px;
-				margin-bottom: 10px;
-			}
-			.accordion {
-				padding: 10px;
-				width: 100%;
-				font-size: 10px;
-				font-weight: 400;
-			}
-			.panel {
-			  padding: 10px;
-			  font-size:9px;
-			  letter-spacing: 0;
-			  font-weight: 400;
-			  max-height: 0;
-			}
-			.accordion:after {
-			  content: '\02795';
-			  font-size: 10px;
-			  font-weight: 200;
-			  margin-left: 5px;
-			}
-			#contact{
-				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
-				rgb(0, 0, 0)),url(images/bg-3.jpg);
-			}
-			.contact-form{
-				width: 97%;
-				margin: auto;
-				padding: 10x;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				flex-direction: column;
-			}
-			form{
-				width: 83%;
-				margin-bottom: 2rem;
-				padding: 10px;
-				border-radius: 5px;
-				border: 1px solid white;
-				background: transparent;
-			}
-			form .footer-names{
-				display: block;
-				padding-top: 20px;
-				padding-bottom: 10px;
-				width: 85%;
-				margin: auto;
-				justify-content: center;
-				align-items: center;
-			}
-			form .first{
-				margin-right: 0;
-			}
-			form input{
-				width: 100%;
-				margin-bottom: 1rem;
-				padding: 9px 10px;
-				outline: none;
-				color: white;
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				border: 1px solid white;
-				background-color: transparent;
-			}
-			form textarea{
-				width: 85%;
-				margin: auto;
-				display: block;
-				background: transparent;
-				border: 1px solid white;
-				padding: 7px 10px;
-				color: white;
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				margin-bottom: 1.5rem;
-			}
-			form .send{
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-				align-items: center;
-				margin-bottom: 10px;
-			}
-			.send strong{
-				font-weight: 400;
-				letter-spacing: 0;
-				color: whitesmoke;
-				padding-bottom: 15px;
-				font-size: 10px;
-				text-align: center;
-			}
-			.sub-btn{
-				width: 15rem;
-				padding: 7px 10px;
-				outline: none;
-				border: none;
-				background: royalblue;
-				color: white;
-				font-weight: 600;
-				letter-spacing: 1px;
-				cursor: pointer;
-				border-radius: 5px;
-			}
-			.info{
-				width: 75%;
-				padding: 10px;
-				text-align: center;
-				display: block;
-			}
-			.info h2{
-				font-size: 16px;
-				letter-spacing: 1px;
-				font-weight: 500;
-				padding-bottom: 10px;
-			}
-			.info p{
-				font-size: 10px;
-				letter-spacing: 0;
-				color: white;
-				font-weight: 400;
-				padding-bottom: 20px;
-			}
-			.socials a i{
-				display: inline-flex;
-				font-size: 18px;
-				width: 10px;
-				height: 10px;
-				padding: 5px 25px;
-			}
-			.info h4{
-				padding-top: 20px;
-				font-weight: 500;
-				letter-spacing: 1px;
-				font-size: 13px;
-				margin-bottom: 10px;
-			}
-			.email{
-				font-size: 10px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.gotopbr i{
-				position: fixed;
-				width: 37px;
-				height: 37px;
-				bottom: 40px;
-				right: 7px;
-				line-height: 37px;
-				font-size: 18px;
-			}
-			footer p{
-				font-size: 11px;
-				letter-spacing: 1px;
-			}		
+
+@media screen and (max-width:375px){
+	header{
+		width: 100%;
+		min-height: 100vh;
+		padding: 3px;
+	}
+	.banner{
+		width: 100%;
+		padding: 5px;er: blur(1px);
+	}
+	.banner h1{
+		font-size: 23px;
+		letter-spacing: 1px;
+		font-weight: 520;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.banner p{
+		font-size: 10px;
+		letter-spacing: 0px;
+		padding-bottom: 1.3rem;
+		max-width: 500;
+		font-weight: 400;
+	}
+	.banner span{
+		font-size: 10px;
+		letter-spacing: 0px;
+		font-weight: 500;
+	}
+	.banner button{
+		width: 8rem;
+		padding: 8px 8px;
+		margin-bottom: 1rem;
+	}
+	.banner button a{
+		font-size: 11px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+	.card .content h1{
+		font-size: 15px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		padding-bottom: 5px;
+	}
+	.card .content p{
+		font-size: 11px;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+	.price-card p{
+		font-size: 11px;
+		letter-spacing: 0px;
+		font-weight: 400;;
+		padding-bottom: 13px;
+	}
 }
-@media only screen and (max-width:430px){
-		.container{
-				width: 100%;
-				padding-top: 150px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.520),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 65vh;
-			}
-}
-@media only screen and (max-width:414px){
-		.container{
-				width: 100%;
-				padding-top: 160px;
-				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.520),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 60vh;
-			}
-}
-@media only screen and (max-width:412px){
-		.container{
-				width: 100%;
-				padding-top: 170px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.525),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 55vh;
-			}
-}
-@media only screen and (max-width:390px){
-		.container{
-				width: 100%;
-				padding-top: 160px;
-				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.520),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 60vh;
-			}
-}
-@media only screen and (max-width:375px){
-		.container{
-				width: 100%;
-				padding-top: 100px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.520),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 65vh;
-			}
-}
-@media only screen and (max-width:360px){
-		.container{
-				width: 100%;
-				padding-top: 100px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.510),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 60vh;
-			}
-}
-@media only screen and (max-width:333px){
-		.container{
-				width: 100%;
-				padding-top: 100px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				object-fit: cover;
-				min-height: 60vh;
-			}
-		.details h1{
-				font-size: 20px;
-				letter-spacing: 1px;
-				font-weight: 600;
-				padding-top: 10px;
-				padding-bottom: 10px;
-			}
-			.details p{
-				font-size: 10px;
-				width: 75%;
-				margin: auto;
-				padding-top: 10px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				padding-bottom: 1rem;
-			}
-			.details span{
-				font-size: 10px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.details button{
-				width: 8rem;
-				padding: 6px 9px;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				border-radius: 20px;
-				cursor: pointer;
-			}
-			.details button a{
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 500;
-			}
-			/*////////////////////////*/
-			#gallery{
-					width: 100%;
-					padding: 10px;
-					padding-top: 1.5rem;
-				}
-				.gallery-slider{
-					padding-top: 20px;
-				}
-			.slider{
-				height: 220px;
-				width: 90%;
-				display: grid;
-				padding: 10px;
-				margin-bottom: 40px;
-			}
-			#capture h2{
-				font-size: 11px;
-				letter-spacing: 0;
-				font-weight: 620;
-				padding-top: 20px;
-				margin-bottom:1rem;
-			}
-		.capture-content{
-				display: flex;
-				gap: 10px;
-				width: 97%;
-				margin: auto;
-				flex-direction: column;
-				justify-content: center;
-				flex-grow: 1;
-				padding: 10px;
-			}
-			.card{
-				width: 260px;
-				margin: auto;
-				margin-bottom: 1rem;
-				aspect-ratio: 1 / 1.1;
-				border-radius: 15px;
-			}
-			.card > img{
-				width: 100%;
-				height: 100%;
-			}
-			.card > .content{
-				height: 40%;
-				background: #100c20;
-				padding: 1.1rem;
-			}
-			.card .content h1{
-				color: white;
-				font-size: 14px;
-				letter-spacing: 0;
-				font-weight: 550;
-				padding-bottom: 7px;
-			}
-			.card .content p{
-				color: white;
-				font-size: 11px;
-				color: white;
-				font-weight: 420;
-				letter-spacing: 0;
-			}
-			#price{
-				padding-top: 15px;
-			}
-			#price h3{
-				text-align: center;
-				font-size: 14px;
-				letter-spacing: 0;
-				font-weight: 550;
-				margin-bottom: 1.5rem;
-			}
-		.pricing{
-				width: 100%;
-				margin: auto;
-				flex-grow: 1;
-				padding: 5px;
-			}
-		.price-card{
-				width: 80%;
-				padding: 9px;
-				border-radius: 5px;
-				background: transparent;
-				border:.1px solid grey;
-				margin-bottom: 2.5rem;
-				box-shadow: 0 0 1px 1px white;
-			}
-			.pop{
-				color: yellow;
-				font-size: 10px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.price-card h1{
-				font-size: 13px;
-				letter-spacing: 0;
-				font-weight: 500;
-				padding-top: 10px;
-				padding-bottom: 15px;
-				padding-left: 0;
-			}
-			.price-card h2{
-				font-size: 16px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 500;;
-				padding-bottom: 7px;
-				padding-left: 0;
-			}
-			.price-card bold{
-				font-weight: 400;
-				padding-left: 0;
-				font-size: 11px;
-			}
-			.price-card h5{
-				font-size: 11px;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 450;;
-				padding-bottom: 10px;
-				padding-left: 0;
-			}
-			.price-card p{
-				font-size: 10px;
-				letter-spacing: 1px;
-				padding-left: 0;
-				color: white;
-				font-weight: 400;;
-				padding-bottom: 20px;
-			}
-			.price-card ul li{
-				list-style: none;
-				font-size: 10px;
-				padding-left: 0;
-				letter-spacing: 1px;
-				color: white;
-				font-weight: 350;
-				padding-bottom: 5px;
-			}
-			.price-card button{
-				width: 100%;
-				margin:auto;
-				margin-top: 1.5rem;
-				padding: 6px 10px;
-				box-shadow: 0 0px white;
-				margin-bottom: 15px;
-			}
-			.price-card button a{
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 600;
-			}
-			.services{
-				width: 100%;
-				padding-top: 10px;
-			}
-			.services h3{
-				text-align: center;
-				font-weight: 620;
-				letter-spacing: 0;
-				font-size:13px;
-				margin-bottom: 10px;
-			}
-			.accordion {
-				padding: 10px;
-				width: 100%;
-				font-size: 10px;
-				font-weight: 400;
-			}
-			.panel {
-			  padding: 5px;
-			  font-size:9px;
-			  letter-spacing: 0;
-			  font-weight: 400;
-			  line-height: 15px;
-			  max-height: 0;
-			}
-			.accordion:after {
-			  content: '\02795'; /* Unicode character for "plus" sign (+) */
-			  font-size: 10px;
-			  font-weight: 200;
-			  margin-left: 5px;
-			}
-			#contact{
-				background-image:linear-gradient(to top,rgba(0, 0, 0, 0.534),
-				rgb(0, 0, 0)),url(images/bg-3.jpg);
-			}
-			.contact-form{
-				width: 97%;
-				margin: auto;
-				padding: 10x;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				flex-direction: column;
-			}
-			form{
-				width: 83%;
-				margin-bottom:1.5rem;
-				padding: 10px;
-				border-radius: 5px;
-				border: 1px solid white;
-				background: transparent;
-			}
-			form .footer-names{
-				display: block;
-				padding-top: 10px;
-				padding-bottom: 10px;
-				width: 85%;
-				margin: auto;
-				justify-content: center;
-				align-items: center;
-			}
-			form .first{
-				margin-right: 0;
-			}
-			form input{
-				width: 100%;
-				margin-bottom: 1rem;
-				padding: 9px 10px;
-				outline: none;
-				color: white;
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				border: 1px solid white;
-				background-color: transparent;
-			}
-			form textarea{
-				width: 85%;
-				margin: auto;
-				display: block;
-				background: transparent;
-				border: 1px solid white;
-				padding: 7px 10px;
-				color: white;
-				font-size: 12px;
-				letter-spacing: 1px;
-				font-weight: 400;
-				margin-bottom: 1.5rem;
-			}
-			form .send{
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-				align-items: center;
-				margin-bottom: 10px;
-			}
-			.send strong{
-				font-weight: 400;
-				letter-spacing: 0;
-				color: whitesmoke;
-				padding-bottom: 15px;
-				font-size: 10px;
-				text-align: center;
-			}
-			.sub-btn{
-				width: 15rem;
-				padding: 7px 10px;
-				outline: none;
-				border: none;
-				background: royalblue;
-				color: white;
-				font-weight: 600;
-				letter-spacing: 1px;
-				cursor: pointer;
-				border-radius: 5px;
-			}
-			.info{
-				width: 75%;
-				padding: 10px;
-				text-align: center;
-				display: block;
-			}
-			.info h2{
-				font-size: 16px;
-				letter-spacing: 1px;
-				font-weight: 500;
-				padding-bottom: 10px;
-			}
-			.info p{
-				font-size: 10px;
-				letter-spacing: 0;
-				color: white;
-				font-weight: 400;
-				padding-bottom: 20px;
-			}
-			.socials a i{
-				display: inline-flex;
-				font-size: 18px;
-				width: 10px;
-				height: 10px;
-				padding: 5px 18px;
-			}
-			.info h4{
-				padding-top: 20px;
-				font-weight: 500;
-				letter-spacing: 1px;
-				font-size: 13px;
-				margin-bottom: 10px;
-			}
-			.email{
-				font-size: 10px;
-				letter-spacing: 1px;
-				font-weight: 400;
-			}
-			.gotopbr i{
-				position: fixed;
-				width: 37px;
-				height: 37px;
-				bottom: 40px;
-				right: 7px;
-				line-height: 37px;
-				font-size: 18px;
-			}
-			footer p{
-				font-size: 11px;
-				letter-spacing: 1px;
-			}		
-}
-@media only screen and (max-width:320px){
-			.container{
-				width: 100%;
-				padding-top: 60px;
-				background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0.530),
-				rgb(0, 0, 0)),url(images/bg-1.jpg);
-				min-height: 70vh;
-			}
-			.details button{
-				width: 7rem;
-				padding: 5px 7px;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				border-radius: 20px;
-				cursor: pointer;
-			}
-			.details button a{
-				font-size: 11px;
-				letter-spacing: 1px;
-				font-weight: 500;
-			}
-}
+/*///////////Completed//////////////*/
+/*/////////////////////////////////*/
